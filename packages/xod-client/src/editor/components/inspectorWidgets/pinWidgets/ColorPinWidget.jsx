@@ -152,7 +152,7 @@ ColorPinWidget.propTypes = {
 };
 
 ColorPinWidget.defaultProps = {
-  label: 'Unnamed property',
+  label: 'Właściwość bez nazwy',
   value: '',
   disabled: false,
   visibleColorPickerWidgetId: null,

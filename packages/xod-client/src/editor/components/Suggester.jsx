@@ -197,7 +197,7 @@ class Suggester extends React.Component {
     const { value, suggestions } = this.state;
 
     const inputProps = {
-      placeholder: 'Search nodes',
+      placeholder: 'Szukaj węzłów',
       value,
       onChange: this.onChange,
       onKeyDown: event => {

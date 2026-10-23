@@ -26,14 +26,14 @@ const AccountPane = ({
   <SidebarPanel
     id={PANEL_IDS.ACCOUNT}
     className="AccountPane"
-    title="Account"
+    title="Konto"
     sidebarId={sidebarId}
     autohide={autohide}
   >
     <div className="AccountPane-content">
       <div className="login-info">
         {foldMaybe(
-          <div className="username">Guest Xoder</div>,
+          <div className="username">Gość XOD</div>,
           ({ username }) => [
             <div className="introduction" key="introduction">
               Logged in as
@@ -47,7 +47,7 @@ const AccountPane = ({
       </div>
 
       <div className="cloudLimits">
-        <div className="title">Cloud limits</div>
+        <div className="title">Limity chmury</div>
         <div>
           Compilations:{' '}
           {compilationsLeft == null ? 'currently offline' : compilationsLeft}
@@ -56,7 +56,7 @@ const AccountPane = ({
 
       {foldMaybe(
         <AuthForm onLogin={actions.login} isAuthorising={isAuthorising} />,
-        () => <Button onClick={actions.logout}>Logout</Button>,
+        () => <Button onClick={actions.logout}>Wyloguj</Button>,
         user
       )}
     </div>

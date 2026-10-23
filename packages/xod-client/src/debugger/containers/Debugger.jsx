@@ -113,7 +113,7 @@ class Debugger extends React.PureComponent {
         <button
           className="clear-log-button"
           onClick={actions.clearLog}
-          title="Clear Log"
+          title="Wyczyść dziennik"
         />
         <ContextMenuTrigger
           id={DEPLOYMENT_PANEL_FILTER_CONTEXT_MENU_ID}
@@ -144,7 +144,7 @@ class Debugger extends React.PureComponent {
             Component="button"
             size="lg"
             onClick={this.onSaveLogClicked}
-            title="Download Log"
+            title="Pobierz dziennik"
             disabled={isDisabled}
             className="save-log"
           />
@@ -155,7 +155,7 @@ class Debugger extends React.PureComponent {
             Component="button"
             size="lg"
             onClick={this.onCopyLogClicked}
-            title="Copy Log"
+            title="Kopiuj dziennik"
             disabled={isDisabled}
             className="copy-log"
           />
@@ -226,7 +226,7 @@ class Debugger extends React.PureComponent {
             className="expander"
             onClick={actions.toggleDebugger}
           >
-            <span className="title">Deployment</span>
+            <span className="title">Wgrywanie</span>
 
             <div className="progress">
               {uploadProgress}
@@ -235,7 +235,7 @@ class Debugger extends React.PureComponent {
                   Component="button"
                   className="abort-process-button"
                   name="ban"
-                  title="Abort Test"
+                  title="Przerwij test"
                   onClickCapture={e => {
                     e.stopPropagation();
                     actions.abortTabtest();
@@ -248,7 +248,7 @@ class Debugger extends React.PureComponent {
                   Component="button"
                   className="abort-process-button"
                   name="ban"
-                  title="Stop Simulation"
+                  title="Zatrzymaj symulację"
                   onClickCapture={e => {
                     e.stopPropagation();
                     actions.abortSimulation();
@@ -261,7 +261,7 @@ class Debugger extends React.PureComponent {
                   Component="button"
                   className="abort-process-button"
                   name="ban"
-                  title="Stop Session"
+                  title="Zatrzymaj sesję"
                   onClickCapture={e => {
                     e.stopPropagation();
                     stopDebuggerSession();
@@ -276,18 +276,18 @@ class Debugger extends React.PureComponent {
           <button
             className="quick-upload-button"
             onClick={onUploadClick}
-            title="Upload to Arduino"
+            title="Wgraj do Arduino"
           />
           <button
             className="debug-button"
             onClick={onUploadAndDebugClick}
-            title="Upload and Debug"
+            title="Wgraj i uruchom diagnostykę"
           />
           <Icon
             Component="button"
             name="gamepad"
             className="simulation-button"
-            title="Simulate"
+            title="Symuluj"
             onClick={onRunSimulationClick}
           />
           <Icon

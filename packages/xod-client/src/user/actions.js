@@ -105,7 +105,7 @@ export const fetchGrant = (startup = false) => dispatch =>
 export const login = (username, password) => dispatch => {
   const form = new URLSearchParams();
   form.set('username', username);
-  form.set('password', password);
+  form.set('hasło', password);
 
   dispatch({ type: ActionTypes.LOGIN_STARTED });
 

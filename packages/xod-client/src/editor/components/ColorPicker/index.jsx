@@ -116,7 +116,7 @@ class ColorPicker extends React.Component {
               onBlur={this.commitInputs}
               onKeyDown={this.onInputKeyDown}
             />
-            <label htmlFor="ColorPicker_Hue">Hue:</label>
+            <label htmlFor="ColorPicker_Hue">Odcień:</label>
           </div>
           <div>
             <input
@@ -126,7 +126,7 @@ class ColorPicker extends React.Component {
               onBlur={this.commitInputs}
               onKeyDown={this.onInputKeyDown}
             />
-            <label htmlFor="ColorPicker_Saturation">Saturation:</label>
+            <label htmlFor="ColorPicker_Saturation">Nasycenie:</label>
           </div>
           <div>
             <input
@@ -136,7 +136,7 @@ class ColorPicker extends React.Component {
               onBlur={this.commitInputs}
               onKeyDown={this.onInputKeyDown}
             />
-            <label htmlFor="ColorPicker_Lightness">Lightness:</label>
+            <label htmlFor="ColorPicker_Lightness">Jasność:</label>
           </div>
         </div>
       </div>

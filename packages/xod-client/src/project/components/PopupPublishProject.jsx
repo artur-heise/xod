@@ -48,22 +48,22 @@ const PopupPublishProject = ({
       onClose={onClose}
     >
       <p className="property">
-        <span className="propertyLabel">Name: </span>
+        <span className="propertyLabel">Nazwa: </span>
         <span className="libName">
           {username}/{projectName}
         </span>
         {invalidNameMessage}
       </p>
       <p className="property">
-        <span className="propertyLabel">Version: </span>
+        <span className="propertyLabel">Wersja: </span>
         {version}
       </p>
       <p className="property">
-        <span className="propertyLabel">License: </span>
+        <span className="propertyLabel">Licencja: </span>
         {license}
       </p>
       <p className="property">
-        <span className="propertyLabel">Description: </span>
+        <span className="propertyLabel">Opis: </span>
         {description}
       </p>
       {isPublishing ? (
@@ -75,8 +75,8 @@ const PopupPublishProject = ({
           <Button onClick={onPublish} disabled={!isValidName} autoFocus>
             Publish
           </Button>
-          <Button onClick={onRequestToEditPreferences}>Edit</Button>
-          <Button onClick={onClose}>Cancel</Button>
+          <Button onClick={onRequestToEditPreferences}>Edycja</Button>
+          <Button onClick={onClose}>Anuluj</Button>
         </div>
       )}
     </PopupForm>

@@ -49,7 +49,7 @@ BoolWidget.propTypes = {
 };
 
 BoolWidget.defaultProps = {
-  label: 'Unnamed property',
+  label: 'Właściwość bez nazwy',
   value: false,
 };
 

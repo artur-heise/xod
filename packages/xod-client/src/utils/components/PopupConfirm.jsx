@@ -72,9 +72,9 @@ PopupConfirm.propTypes = {
   isVisible: PropTypes.bool,
 };
 PopupConfirm.defaultProps = {
-  title: 'We have a question...',
+  title: 'Mamy pytanie...',
   confirmText: 'Confirm',
-  cancelText: 'Cancel',
+  cancelText: 'Anuluj',
   className: '',
   onClose: noop,
   onConfirm: noop,

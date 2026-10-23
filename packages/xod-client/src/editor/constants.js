@@ -26,13 +26,13 @@ export const WIDGET_TYPE = {
   PORT: XP.PIN_TYPE.PORT,
   DEAD: XP.PIN_TYPE.DEAD,
   COLOR: XP.BINDABLE_CUSTOM_TYPES.COLOR,
-  LABEL: 'Label',
+  LABEL: 'Etykieta',
   IO_LABEL: 'IOLabel',
   TEXTAREA: 'textarea',
 };
 
 export const SELECTION_ENTITY_TYPE = {
-  NODE: 'Node',
+  NODE: 'Węzeł',
   COMMENT: 'Comment',
   LINK: 'Link',
 };

@@ -42,11 +42,11 @@ const renderSelectedManyElements = selection => (
 );
 
 const renderSelectedLink = () => (
-  <InspectorMessage text="Links do not have any properties." />
+  <InspectorMessage text="Połączenia nie mają właściwości." />
 );
 
 const renderSelectedComment = () => (
-  <InspectorMessage text="Comments do not have any properties." />
+  <InspectorMessage text="Komentarze nie mają właściwości." />
 );
 const renderSelectedNode = R.curry(
   (
@@ -74,7 +74,7 @@ const renderSelectedPatch = R.curry(
   )
 );
 const renderDefault = () => (
-  <InspectorMessage text="Open a patch to edit its properties" />
+  <InspectorMessage text="Otwórz patch, aby edytować jego właściwości" />
 );
 
 // =============================================================================
@@ -134,8 +134,8 @@ const Inspector = ({
   return (
     <SidebarPanel
       id={PANEL_IDS.INSPECTOR}
-      className="Inspector"
-      title="Inspector"
+      className="Inspektor"
+      title="Inspektor"
       sidebarId={sidebarId}
       autohide={autohide}
     >

@@ -42,7 +42,7 @@ export const SIMULATION_LAUNCHED = 'Simulation is launched';
 export const SIMULATION_ABORTED = 'The simulation was interrupted by the user';
 
 export const DO_NOT_USE_TETHERING_INTERNET_IN_BROWSER = {
-  title: 'Tethering unavailable in browser',
+  title: 'Połączenie sieciowe nie jest dostępne w przeglądarce',
   note:
     'The internet tethering requires OS features which are not available to the web-browser.',
   solution:
@@ -53,7 +53,7 @@ export const LOG_COPIED = {
   title: `Copied`,
 };
 export const LOG_COPY_NOT_SUPPORTED = {
-  title: 'Bad browser',
+  title: 'Nieobsługiwana przeglądarka',
   solution:
     'Install the desktop IDE or use the latest version of Google Chrome / Firefox.',
 };

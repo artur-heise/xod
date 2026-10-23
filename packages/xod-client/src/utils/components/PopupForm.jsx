@@ -52,7 +52,7 @@ PopupForm.propTypes = {
   isVisible: PropTypes.bool,
 };
 PopupForm.defaultProps = {
-  title: 'Fill the form',
+  title: 'Wypełnij formularz',
   className: '',
   onClose: noop,
   isClosable: true,

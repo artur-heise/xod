@@ -45,15 +45,15 @@ class AuthForm extends React.Component {
         <input
           className="inspectorInput inspectorInput--full-width"
           type="text"
-          placeholder="username or email"
+          placeholder="nazwa użytkownika lub e-mail"
           value={username}
           onChange={this.onUsernameChange}
         />
 
         <input
           className="inspectorInput inspectorInput--full-width"
-          placeholder="password"
-          type="password"
+          placeholder="hasło"
+          type="hasło"
           value={password}
           onChange={this.onPasswordChange}
         />

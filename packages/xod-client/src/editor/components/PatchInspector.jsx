@@ -34,7 +34,7 @@ class PatchInspector extends React.PureComponent {
           key={patchPath}
           entityId={patchPath}
           keyName=""
-          label="Description"
+          label="Opis"
           disabled={disabled}
           value={XP.getPatchDescription(this.props.patch)}
           onPropUpdate={this.onDescriptionUpdate}

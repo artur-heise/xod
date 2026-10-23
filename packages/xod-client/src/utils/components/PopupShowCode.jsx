@@ -38,7 +38,7 @@ class PopupShowCode extends React.PureComponent {
         className="skylight-dialog--fullscreen"
         hideOnOverlayClicked
         ref={this.assignPopupRef}
-        title="Transpiled code"
+        title="Wygenerowany kod"
         afterClose={this.props.onClose}
       >
         <div className="CodeboxModalContent">

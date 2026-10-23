@@ -117,7 +117,7 @@ class Catcher extends React.Component {
     const recovering = this.state.recovering ? (
       <div className="Recovering">
         <Icon name="circle-o-notch" size="5x" spin />
-        <h2>Recovering...</h2>
+        <h2>Odzyskiwanie...</h2>
       </div>
     ) : null;
 
@@ -130,7 +130,7 @@ class Catcher extends React.Component {
         {recovering}
         <div className="Message">
           <CloseButton onClick={this.onClose} />
-          <h1>Something went wrong</h1>
+          <h1>Wystąpił nieoczekiwany błąd</h1>
           <p>
             First of all, save the project after recovering process is complete.
           </p>

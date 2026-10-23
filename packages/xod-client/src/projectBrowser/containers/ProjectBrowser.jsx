@@ -307,13 +307,13 @@ class ProjectBrowser extends React.Component {
       <button
         key="addPatchButton"
         className="newpatch"
-        title="Add patch"
+        title="Dodaj patch"
         onClick={this.props.actions.requestCreatePatch}
       />,
       <button
         key="addLibButton"
         className="addlib"
-        title="Add library"
+        title="Dodaj bibliotekę"
         onClick={this.onClickAddLibrary}
       />,
       <ContextMenuTrigger
@@ -348,7 +348,7 @@ class ProjectBrowser extends React.Component {
         />
         <SidebarPanel
           id={PANEL_IDS.PROJECT_BROWSER}
-          title="Project Browser"
+          title="Przeglądarka projektu"
           sidebarId={this.props.sidebarId}
           autohide={this.props.autohide}
           additionalButtons={this.renderToolbarButtons()}

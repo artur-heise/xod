@@ -354,7 +354,7 @@ export default class App extends React.Component {
 
     return (
       <PopupPrompt
-        title="Create new project"
+        title="Utwórz nowy projekt"
         confirmText="Create project"
         isVisible={this.props.popups.createProject}
         onConfirm={this.onCreateProject}
@@ -363,7 +363,7 @@ export default class App extends React.Component {
         inputValidator={isValidIdentifier}
         helpText={IDENTIFIER_RULES}
       >
-        <p>Please, give a sonorous name to your project:</p>
+        <p>Podaj nazwę swojego projektu:</p>
       </PopupPrompt>
     );
   }
@@ -374,7 +374,7 @@ export default class App extends React.Component {
     return (
       <PopupPrompt
         key="new_patch"
-        title="Create new patch"
+        title="Utwórz nowy patch"
         onConfirm={this.props.actions.addPatch}
         onClose={this.props.actions.hideAllPopups}
         inputMask={patchBasenameMask}

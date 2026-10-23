@@ -242,7 +242,7 @@ class LibSuggester extends React.Component {
     const { value, suggestions } = this.state;
 
     const inputProps = {
-      placeholder: 'Search libraries',
+      placeholder: 'Szukaj bibliotek',
       value,
       onChange: this.onChange,
       onKeyDown: event => {

@@ -42,7 +42,7 @@ class ProjectBrowserPopups extends React.PureComponent {
     return (
       <PopupPrompt
         key="rename_patch"
-        title="Rename patch"
+        title="Zmień nazwę patcha"
         value={selectedPatchName}
         onConfirm={this.onPatchRenameConfirmed}
         onClose={this.props.onCloseAllPopups}
@@ -61,7 +61,7 @@ class ProjectBrowserPopups extends React.PureComponent {
     return (
       <PopupConfirm
         key="delete_patch"
-        title="Delete the patch"
+        title="Usuń patch"
         onConfirm={this.onPatchDeleteConfirmed}
         onClose={this.props.onCloseAllPopups}
       >

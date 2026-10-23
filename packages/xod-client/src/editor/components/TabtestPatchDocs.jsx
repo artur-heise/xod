@@ -16,7 +16,7 @@ const CppPatchDocs = ({ patch }) => {
 
   return (
     <div className="CppPatchDocs">
-      <span className="title">Tabtest Cheatsheet</span>
+      <span className="title">Ściągawka Tabtest</span>
       <ul>
         <li>
           <span className="pin-label">__time(ms)</span>
@@ -25,7 +25,7 @@ const CppPatchDocs = ({ patch }) => {
       </ul>
       {inputPins.length === 0 ? null : (
         <div>
-          <span className="pin-direction">Inputs:</span>
+          <span className="pin-direction">Wejścia:</span>
           <ul>
             {inputPins.map(pin => (
               <li key={XP.getPinKey(pin)}>
@@ -40,7 +40,7 @@ const CppPatchDocs = ({ patch }) => {
       )}
       {outputPins.length === 0 ? null : (
         <div className="outputs">
-          <span className="pin-direction">Outputs:</span>
+          <span className="pin-direction">Wyjścia:</span>
           <ul>
             {outputPins.map(pin => (
               <li key={XP.getPinKey(pin)}>

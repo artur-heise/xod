@@ -100,11 +100,11 @@ class PopupProjectPreferences extends React.Component {
     return (
       <PopupForm
         isVisible={this.props.isVisible}
-        title="Project preferences"
+        title="Ustawienia projektu"
         onClose={this.props.onClose}
       >
         <div className="ModalContent">
-          <label htmlFor="projectName">Name: </label>
+          <label htmlFor="projectName">Nazwa: </label>
           <input
             className={nameInputClasses}
             type="text"
@@ -115,7 +115,7 @@ class PopupProjectPreferences extends React.Component {
           <p className="helpText">{XP.IDENTIFIER_RULES}</p>
         </div>
         <div className="ModalContent">
-          <label htmlFor="projectLicense">License: </label>
+          <label htmlFor="projectLicense">Licencja: </label>
           <input
             className="inspectorTextInput inspectorInput--full-width"
             type="text"
@@ -125,7 +125,7 @@ class PopupProjectPreferences extends React.Component {
           />
         </div>
         <div className="ModalContent">
-          <label htmlFor="projectVersion">Version: </label>
+          <label htmlFor="projectVersion">Wersja: </label>
           <input
             className="inspectorTextInput inspectorInput--full-width"
             type="text"
@@ -136,7 +136,7 @@ class PopupProjectPreferences extends React.Component {
           />
         </div>
         <div className="ModalContent">
-          <label htmlFor="cloudApiKey">XOD Cloud API Key: </label>
+          <label htmlFor="cloudApiKey">Klucz API XOD Cloud: </label>
           <div
             style={{
               display: 'flex',
@@ -166,7 +166,7 @@ class PopupProjectPreferences extends React.Component {
           </div>
         </div>
         <div className="ModalContent">
-          <label htmlFor="projectDescription">Description: </label>
+          <label htmlFor="projectDescription">Opis: </label>
           <textarea
             className="inspectorTextInput inspectorInput--full-width"
             id="projectDescription"

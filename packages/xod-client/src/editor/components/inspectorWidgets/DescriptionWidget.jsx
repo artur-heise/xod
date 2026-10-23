@@ -7,7 +7,7 @@ const DescriptionWidget = props => {
   };
   return (
     <div className="Widget DescriptionWidget">
-      <label htmlFor={props.elementId}>Description</label>
+      <label htmlFor={props.elementId}>Opis</label>
       <textarea
         className="inspectorTextInput"
         id={props.elementId}

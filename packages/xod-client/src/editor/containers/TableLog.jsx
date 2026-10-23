@@ -142,7 +142,7 @@ class TableLog extends React.Component {
               onChange={this.onChangeSource}
               disabled={hasNoSources}
             >
-              {hasNoSources ? <option>No logs</option> : null}
+              {hasNoSources ? <option>Brak logów</option> : null}
               {this.props.sources.map(({ nodeId, label }) => (
                 <option key={nodeId} value={nodeId}>
                   {label}
@@ -175,7 +175,7 @@ class TableLog extends React.Component {
               onClick={this.onCopyLogClicked}
               disabled={this.isEmptySheet()}
             >
-              <Icon name="copy" title="Download Log" />
+              <Icon name="copy" title="Pobierz dziennik" />
               Copy
             </button>
             <button
@@ -183,14 +183,14 @@ class TableLog extends React.Component {
               onClick={this.onSaveLogClicked}
               disabled={this.isEmptySheet()}
             >
-              <Icon name="save" title="Download Log" />
+              <Icon name="save" title="Pobierz dziennik" />
               Save
             </button>
           </div>
         </div>
         <div className="TableLog-content">
           {this.isEmptySheet() ? (
-            <span className="no-data">No data stored</span>
+            <span className="no-data">Brak zapisanych danych</span>
           ) : (
             <ReactDataSheet
               className="tablelog-grid"

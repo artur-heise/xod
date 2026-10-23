@@ -29,8 +29,8 @@ const PulseWidget = props => {
         onChange={onChange}
         onBlur={props.onBlur}
       >
-        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.NEVER}>Never</option>
-        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.ON_BOOT}>On Boot</option>
+        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.NEVER}>Nigdy</option>
+        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.ON_BOOT}>Podczas uruchamiania</option>
         <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.CONTINUOUSLY}>
           Continuously
         </option>

@@ -40,10 +40,10 @@ const CppPatchDocs = ({ patch }) => {
 
   return (
     <div className="CppPatchDocs">
-      <span className="title">C++ Cheatsheet</span>
+      <span className="title">Ściągawka C++</span>
       {inputPins.length === 0 ? null : (
         <div>
-          <span className="pin-direction">Inputs:</span>
+          <span className="pin-direction">Wejścia:</span>
           <ul>
             {inputPins.map(pin => (
               <li key={XP.getPinKey(pin)}>
@@ -58,7 +58,7 @@ const CppPatchDocs = ({ patch }) => {
       )}
       {outputPins.length === 0 ? null : (
         <div className="outputs">
-          <span className="pin-direction">Outputs:</span>
+          <span className="pin-direction">Wyjścia:</span>
           <ul>
             {outputPins.map(pin => (
               <li key={XP.getPinKey(pin)}>

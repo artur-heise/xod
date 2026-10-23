@@ -143,7 +143,7 @@ class Node extends React.Component {
 
     const pinsArr = R.values(pins);
 
-    const cls = classNames('Node', {
+    const cls = classNames('Węzeł', {
       'is-selected': this.props.isSelected,
       'is-dragged': isDragged,
       'is-ghost': this.props.isGhost,

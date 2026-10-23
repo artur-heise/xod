@@ -46,7 +46,7 @@ GenericPinWidget.propTypes = {
 };
 
 GenericPinWidget.defaultProps = {
-  label: 'Unnamed property',
+  label: 'Właściwość bez nazwy',
   value: '',
   disabled: false,
 };

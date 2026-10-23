@@ -45,7 +45,7 @@ const NodeInspector = ({
         target="_blank"
         rel="noopener noreferrer"
         className="nodeHelp"
-        title="Open documentation in web browser"
+        title="Otwórz dokumentację w przeglądarce"
       >
         <span className="nodeHelpIcon" />
       </a>
@@ -89,8 +89,8 @@ const NodeInspector = ({
         key={`node_label_${nodeId}`}
         kind={NODE_PROPERTY_KIND.PROP}
         keyName={NODE_PROPERTY_KEY.LABEL}
-        label="Label"
-        title="Node’s label"
+        label="Etykieta"
+        title="Etykieta węzła"
         value={XP.getNodeLabel(node)}
         onPropUpdate={onPropUpdate}
       />
@@ -101,7 +101,7 @@ const NodeInspector = ({
         key={`node_description_${nodeId}`}
         kind={NODE_PROPERTY_KIND.PROP}
         keyName={NODE_PROPERTY_KEY.DESCRIPTION}
-        label="Description"
+        label="Opis"
         value={XP.getNodeDescription(node)}
         onPropUpdate={onPropUpdate}
       />

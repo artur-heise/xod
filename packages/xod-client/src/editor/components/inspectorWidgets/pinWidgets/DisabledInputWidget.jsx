@@ -26,7 +26,7 @@ DisabledInputWidget.propTypes = {
 };
 
 DisabledInputWidget.defaultProps = {
-  label: 'Unnamed property',
+  label: 'Właściwość bez nazwy',
   value: 0,
 };
 

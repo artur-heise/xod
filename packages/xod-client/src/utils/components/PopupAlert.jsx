@@ -67,7 +67,7 @@ PopupAlert.propTypes = {
   isVisible: PropTypes.bool,
 };
 PopupAlert.defaultProps = {
-  title: 'Alert!',
+  title: 'Uwaga!',
   closeText: 'Okay',
   className: '',
   onClose: noop,

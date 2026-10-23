@@ -9,7 +9,7 @@ import RegularNodeBody from './RegularNodeBody';
 export const getConstantValue = ({ pins }) =>
   R.compose(
     R.ifElse(
-      // because for pulse nodes value will always be 'Never'
+      // because for pulse nodes value will always be 'Nigdy'
       R.pipe(XP.getPinType, R.equals(XP.PIN_TYPE.PULSE)),
       R.always(null),
       R.prop('value')

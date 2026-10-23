@@ -4,159 +4,159 @@ import { isMacOS } from './browser';
 
 const rawItems = {
   file: {
-    label: 'File',
+    label: 'Plik',
   },
   newProject: {
-    label: 'New Project...',
+    label: 'Nowy projekt...',
     command: COMMAND.NEW_PROJECT,
   },
   openProject: {
-    label: 'Open Project...',
+    label: 'Otwórz projekt...',
     command: COMMAND.OPEN_PROJECT,
   },
   openTutorialProject: {
-    label: 'Open Tutorial Project',
+    label: 'Otwórz projekt samouczka',
   },
   save: {
-    label: 'Save',
+    label: 'Zapisz',
     command: COMMAND.SAVE,
   },
   saveAs: {
-    label: 'Save As...',
+    label: 'Zapisz jako...',
     command: COMMAND.SAVE_AS,
   },
   saveCopyAs: {
-    label: 'Save Copy As...',
+    label: 'Zapisz kopię jako...',
     command: COMMAND.SAVE_COPY_AS,
   },
   switchWorkspace: {
-    label: 'Switch Workspace...',
+    label: 'Zmień obszar roboczy...',
   },
   importProject: {
-    label: 'Import Project...',
+    label: 'Importuj projekt...',
   },
   exportProject: {
-    label: 'Export Project...',
+    label: 'Eksportuj projekt...',
   },
   newPatch: {
-    label: 'New Patch...',
+    label: 'Nowy patch...',
     command: COMMAND.ADD_PATCH,
   },
   addLibrary: {
-    label: 'Add Library...',
+    label: 'Dodaj bibliotekę...',
   },
   publish: {
-    label: 'Publish Library...',
+    label: 'Opublikuj bibliotekę...',
   },
   exit: {
-    label: 'Exit',
+    label: 'Zakończ',
   },
 
   edit: {
-    label: 'Edit',
+    label: 'Edycja',
   },
   undo: {
-    label: 'Undo',
+    label: 'Cofnij',
     command: COMMAND.UNDO,
   },
   redo: {
-    label: 'Redo',
+    label: 'Ponów',
     command: COMMAND.REDO,
   },
   cut: {
-    label: 'Cut',
+    label: 'Wytnij',
     role: 'cut',
     command: COMMAND.CUT,
   },
   copy: {
-    label: 'Copy',
+    label: 'Kopiuj',
     command: COMMAND.COPY,
     role: 'copy',
   },
   paste: {
-    label: 'Paste',
+    label: 'Wklej',
     command: COMMAND.PASTE,
     role: 'paste',
   },
   selectall: {
-    label: 'Select All',
+    label: 'Zaznacz wszystko',
     command: COMMAND.SELECT_ALL,
   },
   projectPreferences: {
-    label: 'Project Preferences',
+    label: 'Ustawienia projektu',
   },
   insertComment: {
-    label: 'Insert Comment',
+    label: 'Wstaw komentarz',
   },
   insertNode: {
-    label: 'Insert Node...',
+    label: 'Wstaw węzeł...',
     command: COMMAND.INSERT_NODE,
   },
   splitLinksToBuses: {
-    label: 'Convert Selected Links to Buses',
+    label: 'Zamień zaznaczone połączenia na magistrale',
     command: COMMAND.MAKE_BUS,
   },
 
   deploy: {
-    label: 'Deploy',
+    label: 'Wgraj',
   },
   showCodeForArduino: {
-    label: 'Show Code for Arduino',
+    label: 'Pokaż kod dla Arduino',
   },
   showCodeWithDebug: {
-    label: 'Show Code with Debug',
+    label: 'Pokaż kod z diagnostyką',
   },
   uploadToArduino: {
-    label: 'Upload to Arduino...',
+    label: 'Wgraj do Arduino...',
     command: COMMAND.UPLOAD,
   },
   connectSerial: {
-    label: 'Connect Serial...',
+    label: 'Połącz przez port szeregowy...',
   },
   updatePackages: {
-    label: 'Upgrade Arduino Packages && Toolchains...',
+    label: 'Aktualizuj pakiety i narzędzia Arduino...',
   },
   runSimulation: {
-    label: 'Simulate',
+    label: 'Symuluj',
   },
 
   view: {
-    label: 'View',
+    label: 'Widok',
   },
   toggleHelp: {
-    label: 'Toggle Helpbar',
+    label: 'Pokaż/ukryj pasek pomocy',
     command: COMMAND.TOGGLE_HELP,
   },
   toggleDebugger: {
-    label: 'Toggle Deployment Pane',
+    label: 'Pokaż/ukryj panel wgrywania',
     command: COMMAND.TOGGLE_DEBUGGER,
   },
   toggleAccountPane: {
-    label: 'Toggle Account Pane',
+    label: 'Pokaż/ukryj panel konta',
   },
   toggleProjectBrowser: {
-    label: 'Toggle Project Browser',
+    label: 'Pokaż/ukryj przeglądarkę projektu',
   },
   toggleInspector: {
-    label: 'Toggle Inspector',
+    label: 'Pokaż/ukryj inspektor',
   },
   panToOrigin: {
-    label: 'Pan to Origin',
+    label: 'Przesuń do początku',
     command: COMMAND.PAN_TO_ORIGIN,
   },
   panToCenter: {
-    label: 'Pan to Center',
+    label: 'Wyśrodkuj widok',
     command: COMMAND.PAN_TO_CENTER,
   },
 
   help: {
-    label: 'Help',
+    label: 'Pomoc',
   },
   documentation: {
-    label: 'Documentation',
+    label: 'Dokumentacja',
   },
   shortcuts: {
-    label: 'Shortcuts',
+    label: 'Skróty klawiszowe',
   },
   forum: {
     label: 'Forum',

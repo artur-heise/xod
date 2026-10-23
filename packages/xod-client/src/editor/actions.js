@@ -783,7 +783,7 @@ export const runTabtest = patchPath => (dispatch, getState) => {
       abortOrPass(({ stdout, worker }) => {
         dispatch(
           addConfirmation({
-            title: 'Tests passed',
+            title: 'Testy zakończone pomyślnie',
             note: R.compose(R.join('\n'), R.reject(R.startsWith('======')))(
               stdout
             ),

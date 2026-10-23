@@ -27,14 +27,14 @@ const deadIcon = (
     key="dead-patch-icon"
     className="dead-patch-icon"
     name="warning"
-    title="Patch contains errors"
+    title="Patch zawiera błędy"
   />
 );
 const deprecatedIcon = (
-  <span className="deprecated-patch-icon" title="Patch deprecated" />
+  <span className="deprecated-patch-icon" title="Patch jest przestarzały" />
 );
 const utilityIcon = (
-  <span className="utility-patch-icon" title="Utility patch" />
+  <span className="utility-patch-icon" title="Patch narzędziowy" />
 );
 
 class PatchGroupItem extends React.Component {

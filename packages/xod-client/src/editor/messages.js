@@ -6,13 +6,13 @@ export const libInstalled = (libName, version) => ({
 });
 
 export const CLIPBOARD_RECURSION_PASTE_ERROR = {
-  title: 'Cannot paste recursively',
+  title: 'Nie można wkleić elementu do samego siebie',
   note:
     'You’re trying to add a node into its own implementation. That’s forbidden.',
   persistent: false,
 };
 export const clipboardMissingPatchPasteError = missingPatches => ({
-  title: 'Invalid paste',
+  title: 'Nieprawidłowe wklejenie',
   note: `The clipboard contains references to missing patches: ${missingPatches}.`,
   solution:
     'First, bring the referred local patches, custom type patches, ' +
@@ -25,19 +25,19 @@ export const LIB_SUGGESTER_TYPE_TO_BEGIN =
 export const LIB_SUGGESTER_NOTHING_FOUND = 'No library found';
 
 export const NO_PATCH_TO_TRANSPILE = {
-  title: 'No patch opened',
+  title: 'Nie otwarto żadnego patcha',
   solution: 'Open a patch to upload and try again',
   persistent: false,
 };
 
 export const SIMULATION_ALREADY_RUNNING = {
-  title: 'Simulation already running',
+  title: 'Symulacja jest już uruchomiona',
   solution: 'Stop the current simulation and try again',
   persistent: true,
 };
 
 export const SIMULATION_STOPPED_BY_CLOSING_TAB = {
-  title: 'Simulation stopped',
+  title: 'Symulacja zatrzymana',
   note: 'You closed the debugger tab.',
   persistent: false,
 };

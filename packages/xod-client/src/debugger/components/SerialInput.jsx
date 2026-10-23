@@ -35,7 +35,7 @@ class SerialInput extends React.Component {
         <input
           disabled={disabled}
           type="text"
-          placeholder="Line to send via serial"
+          placeholder="Tekst do wysłania przez port szeregowy"
           onChange={this.onChange}
           value={this.state.value}
         />

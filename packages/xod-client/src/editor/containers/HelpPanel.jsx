@@ -59,7 +59,7 @@ const HelpPanel = ({
     <SidebarPanel
       id={PANEL_IDS.HELPBAR}
       className="HelpPanel"
-      title="Quick Help"
+      title="Szybka pomoc"
       sidebarId={sidebarId}
       autohide={autohide}
     >

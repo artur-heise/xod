@@ -152,11 +152,11 @@ PopupPrompt.propTypes = {
 };
 
 PopupPrompt.defaultProps = {
-  title: 'We have a question...',
+  title: 'Mamy pytanie...',
   value: '',
   helpText: '',
   confirmText: 'Confirm',
-  cancelText: 'Cancel',
+  cancelText: 'Anuluj',
   className: '',
   onClose: noop,
   onConfirm: noop,

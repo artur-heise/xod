@@ -44,7 +44,7 @@ const SidebarSwitches = ({
             <button
               key="projectBrowser"
               className={`projectBrowser ${maximized && 'selected'}`}
-              title={getShowHideTooltipMessage('Project Browser', maximized)}
+              title={getShowHideTooltipMessage('Przeglądarka projektu', maximized)}
               onClick={onToggleProjectBrowserPanel}
             />
           )),
@@ -52,7 +52,7 @@ const SidebarSwitches = ({
             <button
               key="inspector"
               className={`inspector ${maximized && 'selected'}`}
-              title={getShowHideTooltipMessage('Inspector', maximized)}
+              title={getShowHideTooltipMessage('Inspektor', maximized)}
               onClick={onToggleInspectorPanel}
             />
           )),
@@ -69,7 +69,7 @@ const SidebarSwitches = ({
             <button
               key="helppanel"
               className={`helppanel ${maximized && 'selected'}`}
-              title={getShowHideTooltipMessage('Quick Help', maximized)}
+              title={getShowHideTooltipMessage('Szybka pomoc', maximized)}
               onClick={ontoggleHelpPanel}
             />
           )),

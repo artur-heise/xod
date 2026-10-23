@@ -211,7 +211,7 @@ const PatchDocs = ({ patch, minimal }) => {
           className="output-pins-container"
           style={{ paddingLeft: distanceToFirstPin }}
         >
-          {minimal && <span className="pin-title">Outputs:</span>}
+          {minimal && <span className="pin-title">Wyjścia:</span>}
           <OutputPins
             distanceBetweenPins={distanceBetweenPins}
             pins={outputPins}
