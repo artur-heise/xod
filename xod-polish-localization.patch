@@ -1,0 +1,1234 @@
+--- a/packages/xod-client/src/core/containers/Catcher.jsx
++++ b/packages/xod-client/src/core/containers/Catcher.jsx
+@@ -117,7 +117,7 @@
+     const recovering = this.state.recovering ? (
+       <div className="Recovering">
+         <Icon name="circle-o-notch" size="5x" spin />
+-        <h2>Recovering...</h2>
++        <h2>Odzyskiwanie...</h2>
+       </div>
+     ) : null;
+ 
+@@ -130,7 +130,7 @@
+         {recovering}
+         <div className="Message">
+           <CloseButton onClick={this.onClose} />
+-          <h1>Something went wrong</h1>
++          <h1>Wystąpił nieoczekiwany błąd</h1>
+           <p>
+             First of all, save the project after recovering process is complete.
+           </p>
+--- a/packages/xod-client/src/core/containers/App.jsx
++++ b/packages/xod-client/src/core/containers/App.jsx
+@@ -354,7 +354,7 @@
+ 
+     return (
+       <PopupPrompt
+-        title="Create new project"
++        title="Utwórz nowy projekt"
+         confirmText="Create project"
+         isVisible={this.props.popups.createProject}
+         onConfirm={this.onCreateProject}
+@@ -363,7 +363,7 @@
+         inputValidator={isValidIdentifier}
+         helpText={IDENTIFIER_RULES}
+       >
+-        <p>Please, give a sonorous name to your project:</p>
++        <p>Podaj nazwę swojego projektu:</p>
+       </PopupPrompt>
+     );
+   }
+@@ -374,7 +374,7 @@
+     return (
+       <PopupPrompt
+         key="new_patch"
+-        title="Create new patch"
++        title="Utwórz nowy patch"
+         onConfirm={this.props.actions.addPatch}
+         onClose={this.props.actions.hideAllPopups}
+         inputMask={patchBasenameMask}
+--- a/packages/xod-client/src/utils/menu.js
++++ b/packages/xod-client/src/utils/menu.js
+@@ -4,159 +4,159 @@
+ 
+ const rawItems = {
+   file: {
+-    label: 'File',
++    label: 'Plik',
+   },
+   newProject: {
+-    label: 'New Project...',
++    label: 'Nowy projekt...',
+     command: COMMAND.NEW_PROJECT,
+   },
+   openProject: {
+-    label: 'Open Project...',
++    label: 'Otwórz projekt...',
+     command: COMMAND.OPEN_PROJECT,
+   },
+   openTutorialProject: {
+-    label: 'Open Tutorial Project',
++    label: 'Otwórz projekt samouczka',
+   },
+   save: {
+-    label: 'Save',
++    label: 'Zapisz',
+     command: COMMAND.SAVE,
+   },
+   saveAs: {
+-    label: 'Save As...',
++    label: 'Zapisz jako...',
+     command: COMMAND.SAVE_AS,
+   },
+   saveCopyAs: {
+-    label: 'Save Copy As...',
++    label: 'Zapisz kopię jako...',
+     command: COMMAND.SAVE_COPY_AS,
+   },
+   switchWorkspace: {
+-    label: 'Switch Workspace...',
++    label: 'Zmień obszar roboczy...',
+   },
+   importProject: {
+-    label: 'Import Project...',
++    label: 'Importuj projekt...',
+   },
+   exportProject: {
+-    label: 'Export Project...',
++    label: 'Eksportuj projekt...',
+   },
+   newPatch: {
+-    label: 'New Patch...',
++    label: 'Nowy patch...',
+     command: COMMAND.ADD_PATCH,
+   },
+   addLibrary: {
+-    label: 'Add Library...',
++    label: 'Dodaj bibliotekę...',
+   },
+   publish: {
+-    label: 'Publish Library...',
++    label: 'Opublikuj bibliotekę...',
+   },
+   exit: {
+-    label: 'Exit',
++    label: 'Zakończ',
+   },
+ 
+   edit: {
+-    label: 'Edit',
++    label: 'Edycja',
+   },
+   undo: {
+-    label: 'Undo',
++    label: 'Cofnij',
+     command: COMMAND.UNDO,
+   },
+   redo: {
+-    label: 'Redo',
++    label: 'Ponów',
+     command: COMMAND.REDO,
+   },
+   cut: {
+-    label: 'Cut',
++    label: 'Wytnij',
+     role: 'cut',
+     command: COMMAND.CUT,
+   },
+   copy: {
+-    label: 'Copy',
++    label: 'Kopiuj',
+     command: COMMAND.COPY,
+     role: 'copy',
+   },
+   paste: {
+-    label: 'Paste',
++    label: 'Wklej',
+     command: COMMAND.PASTE,
+     role: 'paste',
+   },
+   selectall: {
+-    label: 'Select All',
++    label: 'Zaznacz wszystko',
+     command: COMMAND.SELECT_ALL,
+   },
+   projectPreferences: {
+-    label: 'Project Preferences',
++    label: 'Ustawienia projektu',
+   },
+   insertComment: {
+-    label: 'Insert Comment',
++    label: 'Wstaw komentarz',
+   },
+   insertNode: {
+-    label: 'Insert Node...',
++    label: 'Wstaw węzeł...',
+     command: COMMAND.INSERT_NODE,
+   },
+   splitLinksToBuses: {
+-    label: 'Convert Selected Links to Buses',
++    label: 'Zamień zaznaczone połączenia na magistrale',
+     command: COMMAND.MAKE_BUS,
+   },
+ 
+   deploy: {
+-    label: 'Deploy',
++    label: 'Wgraj',
+   },
+   showCodeForArduino: {
+-    label: 'Show Code for Arduino',
++    label: 'Pokaż kod dla Arduino',
+   },
+   showCodeWithDebug: {
+-    label: 'Show Code with Debug',
++    label: 'Pokaż kod z diagnostyką',
+   },
+   uploadToArduino: {
+-    label: 'Upload to Arduino...',
++    label: 'Wgraj do Arduino...',
+     command: COMMAND.UPLOAD,
+   },
+   connectSerial: {
+-    label: 'Connect Serial...',
++    label: 'Połącz przez port szeregowy...',
+   },
+   updatePackages: {
+-    label: 'Upgrade Arduino Packages && Toolchains...',
++    label: 'Aktualizuj pakiety i narzędzia Arduino...',
+   },
+   runSimulation: {
+-    label: 'Simulate',
++    label: 'Symuluj',
+   },
+ 
+   view: {
+-    label: 'View',
++    label: 'Widok',
+   },
+   toggleHelp: {
+-    label: 'Toggle Helpbar',
++    label: 'Pokaż/ukryj pasek pomocy',
+     command: COMMAND.TOGGLE_HELP,
+   },
+   toggleDebugger: {
+-    label: 'Toggle Deployment Pane',
++    label: 'Pokaż/ukryj panel wgrywania',
+     command: COMMAND.TOGGLE_DEBUGGER,
+   },
+   toggleAccountPane: {
+-    label: 'Toggle Account Pane',
++    label: 'Pokaż/ukryj panel konta',
+   },
+   toggleProjectBrowser: {
+-    label: 'Toggle Project Browser',
++    label: 'Pokaż/ukryj przeglądarkę projektu',
+   },
+   toggleInspector: {
+-    label: 'Toggle Inspector',
++    label: 'Pokaż/ukryj inspektor',
+   },
+   panToOrigin: {
+-    label: 'Pan to Origin',
++    label: 'Przesuń do początku',
+     command: COMMAND.PAN_TO_ORIGIN,
+   },
+   panToCenter: {
+-    label: 'Pan to Center',
++    label: 'Wyśrodkuj widok',
+     command: COMMAND.PAN_TO_CENTER,
+   },
+ 
+   help: {
+-    label: 'Help',
++    label: 'Pomoc',
+   },
+   documentation: {
+-    label: 'Documentation',
++    label: 'Dokumentacja',
+   },
+   shortcuts: {
+-    label: 'Shortcuts',
++    label: 'Skróty klawiszowe',
+   },
+   forum: {
+     label: 'Forum',
+--- a/packages/xod-client/src/utils/components/PopupForm.jsx
++++ b/packages/xod-client/src/utils/components/PopupForm.jsx
+@@ -52,7 +52,7 @@
+   isVisible: PropTypes.bool,
+ };
+ PopupForm.defaultProps = {
+-  title: 'Fill the form',
++  title: 'Wypełnij formularz',
+   className: '',
+   onClose: noop,
+   isClosable: true,
+--- a/packages/xod-client/src/utils/components/PopupShowCode.jsx
++++ b/packages/xod-client/src/utils/components/PopupShowCode.jsx
+@@ -38,7 +38,7 @@
+         className="skylight-dialog--fullscreen"
+         hideOnOverlayClicked
+         ref={this.assignPopupRef}
+-        title="Transpiled code"
++        title="Wygenerowany kod"
+         afterClose={this.props.onClose}
+       >
+         <div className="CodeboxModalContent">
+--- a/packages/xod-client/src/utils/components/PopupAlert.jsx
++++ b/packages/xod-client/src/utils/components/PopupAlert.jsx
+@@ -67,7 +67,7 @@
+   isVisible: PropTypes.bool,
+ };
+ PopupAlert.defaultProps = {
+-  title: 'Alert!',
++  title: 'Uwaga!',
+   closeText: 'Okay',
+   className: '',
+   onClose: noop,
+--- a/packages/xod-client/src/utils/components/PopupPrompt.jsx
++++ b/packages/xod-client/src/utils/components/PopupPrompt.jsx
+@@ -152,11 +152,11 @@
+ };
+ 
+ PopupPrompt.defaultProps = {
+-  title: 'We have a question...',
++  title: 'Mamy pytanie...',
+   value: '',
+   helpText: '',
+   confirmText: 'Confirm',
+-  cancelText: 'Cancel',
++  cancelText: 'Anuluj',
+   className: '',
+   onClose: noop,
+   onConfirm: noop,
+--- a/packages/xod-client/src/utils/components/PopupConfirm.jsx
++++ b/packages/xod-client/src/utils/components/PopupConfirm.jsx
+@@ -72,9 +72,9 @@
+   isVisible: PropTypes.bool,
+ };
+ PopupConfirm.defaultProps = {
+-  title: 'We have a question...',
++  title: 'Mamy pytanie...',
+   confirmText: 'Confirm',
+-  cancelText: 'Cancel',
++  cancelText: 'Anuluj',
+   className: '',
+   onClose: noop,
+   onConfirm: noop,
+--- a/packages/xod-client/src/editor/actions.js
++++ b/packages/xod-client/src/editor/actions.js
+@@ -783,7 +783,7 @@
+       abortOrPass(({ stdout, worker }) => {
+         dispatch(
+           addConfirmation({
+-            title: 'Tests passed',
++            title: 'Testy zakończone pomyślnie',
+             note: R.compose(R.join('\n'), R.reject(R.startsWith('======')))(
+               stdout
+             ),
+--- a/packages/xod-client/src/editor/messages.js
++++ b/packages/xod-client/src/editor/messages.js
+@@ -6,13 +6,13 @@
+ });
+ 
+ export const CLIPBOARD_RECURSION_PASTE_ERROR = {
+-  title: 'Cannot paste recursively',
++  title: 'Nie można wkleić elementu do samego siebie',
+   note:
+     'You’re trying to add a node into its own implementation. That’s forbidden.',
+   persistent: false,
+ };
+ export const clipboardMissingPatchPasteError = missingPatches => ({
+-  title: 'Invalid paste',
++  title: 'Nieprawidłowe wklejenie',
+   note: `The clipboard contains references to missing patches: ${missingPatches}.`,
+   solution:
+     'First, bring the referred local patches, custom type patches, ' +
+@@ -25,19 +25,19 @@
+ export const LIB_SUGGESTER_NOTHING_FOUND = 'No library found';
+ 
+ export const NO_PATCH_TO_TRANSPILE = {
+-  title: 'No patch opened',
++  title: 'Nie otwarto żadnego patcha',
+   solution: 'Open a patch to upload and try again',
+   persistent: false,
+ };
+ 
+ export const SIMULATION_ALREADY_RUNNING = {
+-  title: 'Simulation already running',
++  title: 'Symulacja jest już uruchomiona',
+   solution: 'Stop the current simulation and try again',
+   persistent: true,
+ };
+ 
+ export const SIMULATION_STOPPED_BY_CLOSING_TAB = {
+-  title: 'Simulation stopped',
++  title: 'Symulacja zatrzymana',
+   note: 'You closed the debugger tab.',
+   persistent: false,
+ };
+--- a/packages/xod-client/src/editor/constants.js
++++ b/packages/xod-client/src/editor/constants.js
+@@ -26,13 +26,13 @@
+   PORT: XP.PIN_TYPE.PORT,
+   DEAD: XP.PIN_TYPE.DEAD,
+   COLOR: XP.BINDABLE_CUSTOM_TYPES.COLOR,
+-  LABEL: 'Label',
++  LABEL: 'Etykieta',
+   IO_LABEL: 'IOLabel',
+   TEXTAREA: 'textarea',
+ };
+ 
+ export const SELECTION_ENTITY_TYPE = {
+-  NODE: 'Node',
++  NODE: 'Węzeł',
+   COMMENT: 'Comment',
+   LINK: 'Link',
+ };
+--- a/packages/xod-client/src/editor/components/Inspector.jsx
++++ b/packages/xod-client/src/editor/components/Inspector.jsx
+@@ -42,11 +42,11 @@
+ );
+ 
+ const renderSelectedLink = () => (
+-  <InspectorMessage text="Links do not have any properties." />
++  <InspectorMessage text="Połączenia nie mają właściwości." />
+ );
+ 
+ const renderSelectedComment = () => (
+-  <InspectorMessage text="Comments do not have any properties." />
++  <InspectorMessage text="Komentarze nie mają właściwości." />
+ );
+ const renderSelectedNode = R.curry(
+   (
+@@ -74,7 +74,7 @@
+   )
+ );
+ const renderDefault = () => (
+-  <InspectorMessage text="Open a patch to edit its properties" />
++  <InspectorMessage text="Otwórz patch, aby edytować jego właściwości" />
+ );
+ 
+ // =============================================================================
+@@ -134,8 +134,8 @@
+   return (
+     <SidebarPanel
+       id={PANEL_IDS.INSPECTOR}
+-      className="Inspector"
+-      title="Inspector"
++      className="Inspektor"
++      title="Inspektor"
+       sidebarId={sidebarId}
+       autohide={autohide}
+     >
+--- a/packages/xod-client/src/editor/components/PatchDocs.jsx
++++ b/packages/xod-client/src/editor/components/PatchDocs.jsx
+@@ -211,7 +211,7 @@
+           className="output-pins-container"
+           style={{ paddingLeft: distanceToFirstPin }}
+         >
+-          {minimal && <span className="pin-title">Outputs:</span>}
++          {minimal && <span className="pin-title">Wyjścia:</span>}
+           <OutputPins
+             distanceBetweenPins={distanceBetweenPins}
+             pins={outputPins}
+--- a/packages/xod-client/src/editor/components/SidebarSwitches.jsx
++++ b/packages/xod-client/src/editor/components/SidebarSwitches.jsx
+@@ -44,7 +44,7 @@
+             <button
+               key="projectBrowser"
+               className={`projectBrowser ${maximized && 'selected'}`}
+-              title={getShowHideTooltipMessage('Project Browser', maximized)}
++              title={getShowHideTooltipMessage('Przeglądarka projektu', maximized)}
+               onClick={onToggleProjectBrowserPanel}
+             />
+           )),
+@@ -52,7 +52,7 @@
+             <button
+               key="inspector"
+               className={`inspector ${maximized && 'selected'}`}
+-              title={getShowHideTooltipMessage('Inspector', maximized)}
++              title={getShowHideTooltipMessage('Inspektor', maximized)}
+               onClick={onToggleInspectorPanel}
+             />
+           )),
+@@ -69,7 +69,7 @@
+             <button
+               key="helppanel"
+               className={`helppanel ${maximized && 'selected'}`}
+-              title={getShowHideTooltipMessage('Quick Help', maximized)}
++              title={getShowHideTooltipMessage('Szybka pomoc', maximized)}
+               onClick={ontoggleHelpPanel}
+             />
+           )),
+--- a/packages/xod-client/src/editor/components/NodeInspector.jsx
++++ b/packages/xod-client/src/editor/components/NodeInspector.jsx
+@@ -45,7 +45,7 @@
+         target="_blank"
+         rel="noopener noreferrer"
+         className="nodeHelp"
+-        title="Open documentation in web browser"
++        title="Otwórz dokumentację w przeglądarce"
+       >
+         <span className="nodeHelpIcon" />
+       </a>
+@@ -89,8 +89,8 @@
+         key={`node_label_${nodeId}`}
+         kind={NODE_PROPERTY_KIND.PROP}
+         keyName={NODE_PROPERTY_KEY.LABEL}
+-        label="Label"
+-        title="Node’s label"
++        label="Etykieta"
++        title="Etykieta węzła"
+         value={XP.getNodeLabel(node)}
+         onPropUpdate={onPropUpdate}
+       />
+@@ -101,7 +101,7 @@
+         key={`node_description_${nodeId}`}
+         kind={NODE_PROPERTY_KIND.PROP}
+         keyName={NODE_PROPERTY_KEY.DESCRIPTION}
+-        label="Description"
++        label="Opis"
+         value={XP.getNodeDescription(node)}
+         onPropUpdate={onPropUpdate}
+       />
+--- a/packages/xod-client/src/editor/components/Suggester.jsx
++++ b/packages/xod-client/src/editor/components/Suggester.jsx
+@@ -197,7 +197,7 @@
+     const { value, suggestions } = this.state;
+ 
+     const inputProps = {
+-      placeholder: 'Search nodes',
++      placeholder: 'Szukaj węzłów',
+       value,
+       onChange: this.onChange,
+       onKeyDown: event => {
+--- a/packages/xod-client/src/editor/components/TabtestPatchDocs.jsx
++++ b/packages/xod-client/src/editor/components/TabtestPatchDocs.jsx
+@@ -16,7 +16,7 @@
+ 
+   return (
+     <div className="CppPatchDocs">
+-      <span className="title">Tabtest Cheatsheet</span>
++      <span className="title">Ściągawka Tabtest</span>
+       <ul>
+         <li>
+           <span className="pin-label">__time(ms)</span>
+@@ -25,7 +25,7 @@
+       </ul>
+       {inputPins.length === 0 ? null : (
+         <div>
+-          <span className="pin-direction">Inputs:</span>
++          <span className="pin-direction">Wejścia:</span>
+           <ul>
+             {inputPins.map(pin => (
+               <li key={XP.getPinKey(pin)}>
+@@ -40,7 +40,7 @@
+       )}
+       {outputPins.length === 0 ? null : (
+         <div className="outputs">
+-          <span className="pin-direction">Outputs:</span>
++          <span className="pin-direction">Wyjścia:</span>
+           <ul>
+             {outputPins.map(pin => (
+               <li key={XP.getPinKey(pin)}>
+--- a/packages/xod-client/src/editor/components/CppPatchDocs.jsx
++++ b/packages/xod-client/src/editor/components/CppPatchDocs.jsx
+@@ -40,10 +40,10 @@
+ 
+   return (
+     <div className="CppPatchDocs">
+-      <span className="title">C++ Cheatsheet</span>
++      <span className="title">Ściągawka C++</span>
+       {inputPins.length === 0 ? null : (
+         <div>
+-          <span className="pin-direction">Inputs:</span>
++          <span className="pin-direction">Wejścia:</span>
+           <ul>
+             {inputPins.map(pin => (
+               <li key={XP.getPinKey(pin)}>
+@@ -58,7 +58,7 @@
+       )}
+       {outputPins.length === 0 ? null : (
+         <div className="outputs">
+-          <span className="pin-direction">Outputs:</span>
++          <span className="pin-direction">Wyjścia:</span>
+           <ul>
+             {outputPins.map(pin => (
+               <li key={XP.getPinKey(pin)}>
+--- a/packages/xod-client/src/editor/components/PatchInspector.jsx
++++ b/packages/xod-client/src/editor/components/PatchInspector.jsx
+@@ -34,7 +34,7 @@
+           key={patchPath}
+           entityId={patchPath}
+           keyName=""
+-          label="Description"
++          label="Opis"
+           disabled={disabled}
+           value={XP.getPatchDescription(this.props.patch)}
+           onPropUpdate={this.onDescriptionUpdate}
+--- a/packages/xod-client/src/editor/components/LibSuggester.jsx
++++ b/packages/xod-client/src/editor/components/LibSuggester.jsx
+@@ -242,7 +242,7 @@
+     const { value, suggestions } = this.state;
+ 
+     const inputProps = {
+-      placeholder: 'Search libraries',
++      placeholder: 'Szukaj bibliotek',
+       value,
+       onChange: this.onChange,
+       onKeyDown: event => {
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/DescriptionWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/DescriptionWidget.jsx
+@@ -7,7 +7,7 @@
+   };
+   return (
+     <div className="Widget DescriptionWidget">
+-      <label htmlFor={props.elementId}>Description</label>
++      <label htmlFor={props.elementId}>Opis</label>
+       <textarea
+         className="inspectorTextInput"
+         id={props.elementId}
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/LabelWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/LabelWidget.jsx
+@@ -7,7 +7,7 @@
+   };
+   return (
+     <div className="Widget LabelWidget">
+-      <label htmlFor={props.elementId}>Label</label>
++      <label htmlFor={props.elementId}>Etykieta</label>
+       <input
+         className="inspectorTextInput nodeLabelTextInput"
+         type="text"
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/BoolPinWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/BoolPinWidget.jsx
+@@ -49,7 +49,7 @@
+ };
+ 
+ BoolWidget.defaultProps = {
+-  label: 'Unnamed property',
++  label: 'Właściwość bez nazwy',
+   value: false,
+ };
+ 
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/StringPinWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/StringPinWidget.jsx
+@@ -131,7 +131,7 @@
+ };
+ 
+ StringWidget.defaultProps = {
+-  label: 'Unnamed property',
++  label: 'Właściwość bez nazwy',
+   value: '',
+   disabled: false,
+ };
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/PulsePinWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/PulsePinWidget.jsx
+@@ -29,8 +29,8 @@
+         onChange={onChange}
+         onBlur={props.onBlur}
+       >
+-        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.NEVER}>Never</option>
+-        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.ON_BOOT}>On Boot</option>
++        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.NEVER}>Nigdy</option>
++        <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.ON_BOOT}>Podczas uruchamiania</option>
+         <option value={INPUT_PULSE_PIN_BINDING_OPTIONS.CONTINUOUSLY}>
+           Continuously
+         </option>
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/ColorPinWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/ColorPinWidget.jsx
+@@ -152,7 +152,7 @@
+ };
+ 
+ ColorPinWidget.defaultProps = {
+-  label: 'Unnamed property',
++  label: 'Właściwość bez nazwy',
+   value: '',
+   disabled: false,
+   visibleColorPickerWidgetId: null,
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/NumberPinWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/NumberPinWidget.jsx
+@@ -50,7 +50,7 @@
+ };
+ 
+ NumberWidget.defaultProps = {
+-  label: 'Unnamed property',
++  label: 'Właściwość bez nazwy',
+   value: 0,
+ };
+ 
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/DisabledInputWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/DisabledInputWidget.jsx
+@@ -26,7 +26,7 @@
+ };
+ 
+ DisabledInputWidget.defaultProps = {
+-  label: 'Unnamed property',
++  label: 'Właściwość bez nazwy',
+   value: 0,
+ };
+ 
+--- a/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/GenericPinWidget.jsx
++++ b/packages/xod-client/src/editor/components/inspectorWidgets/pinWidgets/GenericPinWidget.jsx
+@@ -46,7 +46,7 @@
+ };
+ 
+ GenericPinWidget.defaultProps = {
+-  label: 'Unnamed property',
++  label: 'Właściwość bez nazwy',
+   value: '',
+   disabled: false,
+ };
+--- a/packages/xod-client/src/editor/components/ColorPicker/index.jsx
++++ b/packages/xod-client/src/editor/components/ColorPicker/index.jsx
+@@ -116,7 +116,7 @@
+               onBlur={this.commitInputs}
+               onKeyDown={this.onInputKeyDown}
+             />
+-            <label htmlFor="ColorPicker_Hue">Hue:</label>
++            <label htmlFor="ColorPicker_Hue">Odcień:</label>
+           </div>
+           <div>
+             <input
+@@ -126,7 +126,7 @@
+               onBlur={this.commitInputs}
+               onKeyDown={this.onInputKeyDown}
+             />
+-            <label htmlFor="ColorPicker_Saturation">Saturation:</label>
++            <label htmlFor="ColorPicker_Saturation">Nasycenie:</label>
+           </div>
+           <div>
+             <input
+@@ -136,7 +136,7 @@
+               onBlur={this.commitInputs}
+               onKeyDown={this.onInputKeyDown}
+             />
+-            <label htmlFor="ColorPicker_Lightness">Lightness:</label>
++            <label htmlFor="ColorPicker_Lightness">Jasność:</label>
+           </div>
+         </div>
+       </div>
+--- a/packages/xod-client/src/editor/containers/TableLog.jsx
++++ b/packages/xod-client/src/editor/containers/TableLog.jsx
+@@ -142,7 +142,7 @@
+               onChange={this.onChangeSource}
+               disabled={hasNoSources}
+             >
+-              {hasNoSources ? <option>No logs</option> : null}
++              {hasNoSources ? <option>Brak logów</option> : null}
+               {this.props.sources.map(({ nodeId, label }) => (
+                 <option key={nodeId} value={nodeId}>
+                   {label}
+@@ -175,7 +175,7 @@
+               onClick={this.onCopyLogClicked}
+               disabled={this.isEmptySheet()}
+             >
+-              <Icon name="copy" title="Download Log" />
++              <Icon name="copy" title="Pobierz dziennik" />
+               Copy
+             </button>
+             <button
+@@ -183,14 +183,14 @@
+               onClick={this.onSaveLogClicked}
+               disabled={this.isEmptySheet()}
+             >
+-              <Icon name="save" title="Download Log" />
++              <Icon name="save" title="Pobierz dziennik" />
+               Save
+             </button>
+           </div>
+         </div>
+         <div className="TableLog-content">
+           {this.isEmptySheet() ? (
+-            <span className="no-data">No data stored</span>
++            <span className="no-data">Brak zapisanych danych</span>
+           ) : (
+             <ReactDataSheet
+               className="tablelog-grid"
+--- a/packages/xod-client/src/editor/containers/HelpPanel.jsx
++++ b/packages/xod-client/src/editor/containers/HelpPanel.jsx
+@@ -59,7 +59,7 @@
+     <SidebarPanel
+       id={PANEL_IDS.HELPBAR}
+       className="HelpPanel"
+-      title="Quick Help"
++      title="Szybka pomoc"
+       sidebarId={sidebarId}
+       autohide={autohide}
+     >
+--- a/packages/xod-client/src/user/actions.js
++++ b/packages/xod-client/src/user/actions.js
+@@ -105,7 +105,7 @@
+ export const login = (username, password) => dispatch => {
+   const form = new URLSearchParams();
+   form.set('username', username);
+-  form.set('password', password);
++  form.set('hasło', password);
+ 
+   dispatch({ type: ActionTypes.LOGIN_STARTED });
+ 
+--- a/packages/xod-client/src/user/messages.js
++++ b/packages/xod-client/src/user/messages.js
+@@ -1,5 +1,5 @@
+ export const INCORRECT_CREDENTIALS = {
+-  title: 'Incorrect username or password',
++  title: 'Nieprawidłowa nazwa użytkownika lub hasło',
+   // TODO: button with dircet URL for password recovery
+   solution:
+     'Make sure you use the same credentials as on https://xod.io site. ' +
+@@ -7,7 +7,7 @@
+ };
+ 
+ export const SERVICE_UNAVAILABLE = {
+-  title: 'Service unavailable',
++  title: 'Usługa jest niedostępna',
+   note: 'Failed to complete a request to the XOD server.',
+   // TODO: button “Open XOD site”
+   solution:
+@@ -16,13 +16,13 @@
+ };
+ 
+ export const LOG_IN_TO_CONTINUE = {
+-  title: 'Log in to continue',
++  title: 'Zaloguj się, aby kontynuować',
+   // TODO: parametrize action
+   note: 'The action requires that you are signed in into your XOD account.',
+ };
+ 
+ export const USERNAME_NEEDED_FOR_LITERAL = {
+-  title: 'Not logged in',
++  title: 'Nie zalogowano',
+   note:
+     'The program uses the `=XOD_USERNAME` literal. You should log in to make it work.',
+   solution: 'Open the Account sidebar to enter your login/password or sign up.',
+--- a/packages/xod-client/src/user/components/AuthForm.jsx
++++ b/packages/xod-client/src/user/components/AuthForm.jsx
+@@ -45,15 +45,15 @@
+         <input
+           className="inspectorInput inspectorInput--full-width"
+           type="text"
+-          placeholder="username or email"
++          placeholder="nazwa użytkownika lub e-mail"
+           value={username}
+           onChange={this.onUsernameChange}
+         />
+ 
+         <input
+           className="inspectorInput inspectorInput--full-width"
+-          placeholder="password"
+-          type="password"
++          placeholder="hasło"
++          type="hasło"
+           value={password}
+           onChange={this.onPasswordChange}
+         />
+--- a/packages/xod-client/src/user/containers/AccountPane.jsx
++++ b/packages/xod-client/src/user/containers/AccountPane.jsx
+@@ -26,14 +26,14 @@
+   <SidebarPanel
+     id={PANEL_IDS.ACCOUNT}
+     className="AccountPane"
+-    title="Account"
++    title="Konto"
+     sidebarId={sidebarId}
+     autohide={autohide}
+   >
+     <div className="AccountPane-content">
+       <div className="login-info">
+         {foldMaybe(
+-          <div className="username">Guest Xoder</div>,
++          <div className="username">Gość XOD</div>,
+           ({ username }) => [
+             <div className="introduction" key="introduction">
+               Logged in as
+@@ -47,7 +47,7 @@
+       </div>
+ 
+       <div className="cloudLimits">
+-        <div className="title">Cloud limits</div>
++        <div className="title">Limity chmury</div>
+         <div>
+           Compilations:{' '}
+           {compilationsLeft == null ? 'currently offline' : compilationsLeft}
+@@ -56,7 +56,7 @@
+ 
+       {foldMaybe(
+         <AuthForm onLogin={actions.login} isAuthorising={isAuthorising} />,
+-        () => <Button onClick={actions.logout}>Logout</Button>,
++        () => <Button onClick={actions.logout}>Wyloguj</Button>,
+         user
+       )}
+     </div>
+--- a/packages/xod-client/src/messages/formatUnexpectedError.js
++++ b/packages/xod-client/src/messages/formatUnexpectedError.js
+@@ -1,5 +1,5 @@
+ export default err => ({
+-  title: 'Error',
++  title: 'Błąd',
+   note: err.message,
+   solution:
+     'The error was not caught, which is a bug. Report the issue to XOD developers.',
+--- a/packages/xod-client/src/debugger/messages.js
++++ b/packages/xod-client/src/debugger/messages.js
+@@ -42,7 +42,7 @@
+ export const SIMULATION_ABORTED = 'The simulation was interrupted by the user';
+ 
+ export const DO_NOT_USE_TETHERING_INTERNET_IN_BROWSER = {
+-  title: 'Tethering unavailable in browser',
++  title: 'Połączenie sieciowe nie jest dostępne w przeglądarce',
+   note:
+     'The internet tethering requires OS features which are not available to the web-browser.',
+   solution:
+@@ -53,7 +53,7 @@
+   title: `Copied`,
+ };
+ export const LOG_COPY_NOT_SUPPORTED = {
+-  title: 'Bad browser',
++  title: 'Nieobsługiwana przeglądarka',
+   solution:
+     'Install the desktop IDE or use the latest version of Google Chrome / Firefox.',
+ };
+--- a/packages/xod-client/src/debugger/components/SerialInput.jsx
++++ b/packages/xod-client/src/debugger/components/SerialInput.jsx
+@@ -35,7 +35,7 @@
+         <input
+           disabled={disabled}
+           type="text"
+-          placeholder="Line to send via serial"
++          placeholder="Tekst do wysłania przez port szeregowy"
+           onChange={this.onChange}
+           value={this.state.value}
+         />
+--- a/packages/xod-client/src/debugger/containers/Debugger.jsx
++++ b/packages/xod-client/src/debugger/containers/Debugger.jsx
+@@ -113,7 +113,7 @@
+         <button
+           className="clear-log-button"
+           onClick={actions.clearLog}
+-          title="Clear Log"
++          title="Wyczyść dziennik"
+         />
+         <ContextMenuTrigger
+           id={DEPLOYMENT_PANEL_FILTER_CONTEXT_MENU_ID}
+@@ -144,7 +144,7 @@
+             Component="button"
+             size="lg"
+             onClick={this.onSaveLogClicked}
+-            title="Download Log"
++            title="Pobierz dziennik"
+             disabled={isDisabled}
+             className="save-log"
+           />
+@@ -155,7 +155,7 @@
+             Component="button"
+             size="lg"
+             onClick={this.onCopyLogClicked}
+-            title="Copy Log"
++            title="Kopiuj dziennik"
+             disabled={isDisabled}
+             className="copy-log"
+           />
+@@ -226,7 +226,7 @@
+             className="expander"
+             onClick={actions.toggleDebugger}
+           >
+-            <span className="title">Deployment</span>
++            <span className="title">Wgrywanie</span>
+ 
+             <div className="progress">
+               {uploadProgress}
+@@ -235,7 +235,7 @@
+                   Component="button"
+                   className="abort-process-button"
+                   name="ban"
+-                  title="Abort Test"
++                  title="Przerwij test"
+                   onClickCapture={e => {
+                     e.stopPropagation();
+                     actions.abortTabtest();
+@@ -248,7 +248,7 @@
+                   Component="button"
+                   className="abort-process-button"
+                   name="ban"
+-                  title="Stop Simulation"
++                  title="Zatrzymaj symulację"
+                   onClickCapture={e => {
+                     e.stopPropagation();
+                     actions.abortSimulation();
+@@ -261,7 +261,7 @@
+                   Component="button"
+                   className="abort-process-button"
+                   name="ban"
+-                  title="Stop Session"
++                  title="Zatrzymaj sesję"
+                   onClickCapture={e => {
+                     e.stopPropagation();
+                     stopDebuggerSession();
+@@ -276,18 +276,18 @@
+           <button
+             className="quick-upload-button"
+             onClick={onUploadClick}
+-            title="Upload to Arduino"
++            title="Wgraj do Arduino"
+           />
+           <button
+             className="debug-button"
+             onClick={onUploadAndDebugClick}
+-            title="Upload and Debug"
++            title="Wgraj i uruchom diagnostykę"
+           />
+           <Icon
+             Component="button"
+             name="gamepad"
+             className="simulation-button"
+-            title="Simulate"
++            title="Symuluj"
+             onClick={onRunSimulationClick}
+           />
+           <Icon
+--- a/packages/xod-client/src/projectBrowser/components/ProjectBrowserPopups.jsx
++++ b/packages/xod-client/src/projectBrowser/components/ProjectBrowserPopups.jsx
+@@ -42,7 +42,7 @@
+     return (
+       <PopupPrompt
+         key="rename_patch"
+-        title="Rename patch"
++        title="Zmień nazwę patcha"
+         value={selectedPatchName}
+         onConfirm={this.onPatchRenameConfirmed}
+         onClose={this.props.onCloseAllPopups}
+@@ -61,7 +61,7 @@
+     return (
+       <PopupConfirm
+         key="delete_patch"
+-        title="Delete the patch"
++        title="Usuń patch"
+         onConfirm={this.onPatchDeleteConfirmed}
+         onClose={this.props.onCloseAllPopups}
+       >
+--- a/packages/xod-client/src/projectBrowser/components/PatchGroupItem.jsx
++++ b/packages/xod-client/src/projectBrowser/components/PatchGroupItem.jsx
+@@ -27,14 +27,14 @@
+     key="dead-patch-icon"
+     className="dead-patch-icon"
+     name="warning"
+-    title="Patch contains errors"
++    title="Patch zawiera błędy"
+   />
+ );
+ const deprecatedIcon = (
+-  <span className="deprecated-patch-icon" title="Patch deprecated" />
++  <span className="deprecated-patch-icon" title="Patch jest przestarzały" />
+ );
+ const utilityIcon = (
+-  <span className="utility-patch-icon" title="Utility patch" />
++  <span className="utility-patch-icon" title="Patch narzędziowy" />
+ );
+ 
+ class PatchGroupItem extends React.Component {
+--- a/packages/xod-client/src/projectBrowser/containers/ProjectBrowser.jsx
++++ b/packages/xod-client/src/projectBrowser/containers/ProjectBrowser.jsx
+@@ -307,13 +307,13 @@
+       <button
+         key="addPatchButton"
+         className="newpatch"
+-        title="Add patch"
++        title="Dodaj patch"
+         onClick={this.props.actions.requestCreatePatch}
+       />,
+       <button
+         key="addLibButton"
+         className="addlib"
+-        title="Add library"
++        title="Dodaj bibliotekę"
+         onClick={this.onClickAddLibrary}
+       />,
+       <ContextMenuTrigger
+@@ -348,7 +348,7 @@
+         />
+         <SidebarPanel
+           id={PANEL_IDS.PROJECT_BROWSER}
+-          title="Project Browser"
++          title="Przeglądarka projektu"
+           sidebarId={this.props.sidebarId}
+           autohide={this.props.autohide}
+           additionalButtons={this.renderToolbarButtons()}
+--- a/packages/xod-client/src/project/messages.js
++++ b/packages/xod-client/src/project/messages.js
+@@ -1,19 +1,19 @@
+ import { LINK_ERRORS as LE } from '../editor/constants';
+ 
+ export const SUCCESSFULLY_PUBLISHED = {
+-  title: 'Library published',
++  title: 'Biblioteka została opublikowana',
+ };
+ 
+ export const LINK_ERRORS = {
+   [LE.SAME_DIRECTION]: {
+-    title: 'Impossible link',
++    title: 'Nieprawidłowe połączenie',
+     note: 'Links between pins of the same direction are not allowed.',
+     solution:
+       'Try creating a link between an input (pin on top) and output (pin at bottom)',
+     persistent: false,
+   },
+   [LE.INCOMPATIBLE_TYPES]: {
+-    title: 'Incompatible pin types',
++    title: 'Niezgodne typy pinów',
+     note: `No implicit cast exist to convert the output type to the input type.`,
+     solution: 'Try to find a node for the conversion and place it as a medium.',
+     persistent: false,
+@@ -21,19 +21,19 @@
+ };
+ 
+ export const PROJECT_NAME_NEEDED_FOR_LITERAL = {
+-  title: 'Project name not set',
++  title: 'Nie ustawiono nazwy projektu',
+   note: 'The program uses the `=XOD_PROJECT` literal.',
+   solution: 'Set the project name in Project Preferences and try again.',
+ };
+ 
+ export const PROJECT_NAME_NEEDED_TO_GENERATE_APIKEY = {
+-  title: 'Project name not set',
++  title: 'Nie ustawiono nazwy projektu',
+   note: 'To issue a new API token the project name must not be empty.',
+   solution: 'Set the project name in Project Preferences and try again.',
+ };
+ 
+ export const CANT_GET_TOKEN_WITHOUT_APIKEY = {
+-  title: 'API key not set',
++  title: 'Nie ustawiono klucza API',
+   note:
+     'The program uses the `=XOD_TOKEN` literal. The project should have XOD Cloud API Key set to make it work.',
+   solution:
+@@ -44,7 +44,7 @@
+ // 400 — bad API key
+ // 404 — revoked/invalid API key
+ export const CANT_GET_TOKEN_BECAUSE_OF_WRONG_APIKEY = {
+-  title: 'API key invalid',
++  title: 'Nieprawidłowy klucz API',
+   note:
+     'The program uses the `=XOD_TOKEN` literal. The API key was revoked or has a wrong format.',
+   solution:
+@@ -52,6 +52,6 @@
+ };
+ 
+ export const cantCloneNoPatchFound = patchPath => ({
+-  title: 'Cannot clone patch',
++  title: 'Nie można skopiować patcha',
+   note: `Patch with path "${patchPath}" not found in the project`,
+ });
+--- a/packages/xod-client/src/project/components/PopupProjectPreferences.jsx
++++ b/packages/xod-client/src/project/components/PopupProjectPreferences.jsx
+@@ -100,11 +100,11 @@
+     return (
+       <PopupForm
+         isVisible={this.props.isVisible}
+-        title="Project preferences"
++        title="Ustawienia projektu"
+         onClose={this.props.onClose}
+       >
+         <div className="ModalContent">
+-          <label htmlFor="projectName">Name: </label>
++          <label htmlFor="projectName">Nazwa: </label>
+           <input
+             className={nameInputClasses}
+             type="text"
+@@ -115,7 +115,7 @@
+           <p className="helpText">{XP.IDENTIFIER_RULES}</p>
+         </div>
+         <div className="ModalContent">
+-          <label htmlFor="projectLicense">License: </label>
++          <label htmlFor="projectLicense">Licencja: </label>
+           <input
+             className="inspectorTextInput inspectorInput--full-width"
+             type="text"
+@@ -125,7 +125,7 @@
+           />
+         </div>
+         <div className="ModalContent">
+-          <label htmlFor="projectVersion">Version: </label>
++          <label htmlFor="projectVersion">Wersja: </label>
+           <input
+             className="inspectorTextInput inspectorInput--full-width"
+             type="text"
+@@ -136,7 +136,7 @@
+           />
+         </div>
+         <div className="ModalContent">
+-          <label htmlFor="cloudApiKey">XOD Cloud API Key: </label>
++          <label htmlFor="cloudApiKey">Klucz API XOD Cloud: </label>
+           <div
+             style={{
+               display: 'flex',
+@@ -166,7 +166,7 @@
+           </div>
+         </div>
+         <div className="ModalContent">
+-          <label htmlFor="projectDescription">Description: </label>
++          <label htmlFor="projectDescription">Opis: </label>
+           <textarea
+             className="inspectorTextInput inspectorInput--full-width"
+             id="projectDescription"
+--- a/packages/xod-client/src/project/components/PopupPublishProject.jsx
++++ b/packages/xod-client/src/project/components/PopupPublishProject.jsx
+@@ -48,22 +48,22 @@
+       onClose={onClose}
+     >
+       <p className="property">
+-        <span className="propertyLabel">Name: </span>
++        <span className="propertyLabel">Nazwa: </span>
+         <span className="libName">
+           {username}/{projectName}
+         </span>
+         {invalidNameMessage}
+       </p>
+       <p className="property">
+-        <span className="propertyLabel">Version: </span>
++        <span className="propertyLabel">Wersja: </span>
+         {version}
+       </p>
+       <p className="property">
+-        <span className="propertyLabel">License: </span>
++        <span className="propertyLabel">Licencja: </span>
+         {license}
+       </p>
+       <p className="property">
+-        <span className="propertyLabel">Description: </span>
++        <span className="propertyLabel">Opis: </span>
+         {description}
+       </p>
+       {isPublishing ? (
+@@ -75,8 +75,8 @@
+           <Button onClick={onPublish} disabled={!isValidName} autoFocus>
+             Publish
+           </Button>
+-          <Button onClick={onRequestToEditPreferences}>Edit</Button>
+-          <Button onClick={onClose}>Cancel</Button>
++          <Button onClick={onRequestToEditPreferences}>Edycja</Button>
++          <Button onClick={onClose}>Anuluj</Button>
+         </div>
+       )}
+     </PopupForm>
+--- a/packages/xod-client/src/project/components/Node.jsx
++++ b/packages/xod-client/src/project/components/Node.jsx
+@@ -143,7 +143,7 @@
+ 
+     const pinsArr = R.values(pins);
+ 
+-    const cls = classNames('Node', {
++    const cls = classNames('Węzeł', {
+       'is-selected': this.props.isSelected,
+       'is-dragged': isDragged,
+       'is-ghost': this.props.isGhost,
+--- a/packages/xod-client/src/project/components/nodeParts/ConstantNodeBody.jsx
++++ b/packages/xod-client/src/project/components/nodeParts/ConstantNodeBody.jsx
+@@ -9,7 +9,7 @@
+ export const getConstantValue = ({ pins }) =>
+   R.compose(
+     R.ifElse(
+-      // because for pulse nodes value will always be 'Never'
++      // because for pulse nodes value will always be 'Nigdy'
+       R.pipe(XP.getPinType, R.equals(XP.PIN_TYPE.PULSE)),
+       R.always(null),
+       R.prop('value')
