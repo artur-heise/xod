@@ -180,7 +180,7 @@ class PopupProjectPreferences extends React.Component {
             disabled={!isFormValid}
             className="Button"
           >
-            Update project preferences
+            Zaktualizuj ustawienia projektu
           </button>
         </div>
       </PopupForm>

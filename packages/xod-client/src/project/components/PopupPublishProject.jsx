@@ -30,12 +30,12 @@ const PopupPublishProject = ({
 
   const invalidNameMessage = isValidName ? null : (
     <span className="error">
-      Project has no public name set.<br />
-      Edit
+      Nie ustawiono publicznej nazwy projektu.<br />
+      Edytuj
       <a tabIndex="0" role="button" onClick={onRequestToEditPreferences}>
-        project preferences
+        ustawienia projektu
       </a>
-      to set it up prior to the publishing.
+      przed opublikowaniem projektu.
     </span>
   );
 
@@ -44,7 +44,7 @@ const PopupPublishProject = ({
       className="PopupPublishProject"
       isVisible={isVisible}
       isClosable={!isPublishing}
-      title={`You are about to publish on ${HOSTNAME}`}
+      title={`Zamierzasz opublikować projekt w ${HOSTNAME}`}
       onClose={onClose}
     >
       <p className="property">
@@ -68,12 +68,12 @@ const PopupPublishProject = ({
       </p>
       {isPublishing ? (
         <div className="ModalFooter">
-          <Icon name="circle-o-notch" spin size="lg" /> Publishing…
+          <Icon name="circle-o-notch" spin size="lg" /> Publikowanie…
         </div>
       ) : (
         <div className="ModalFooter">
           <Button onClick={onPublish} disabled={!isValidName} autoFocus>
-            Publish
+            Opublikuj
           </Button>
           <Button onClick={onRequestToEditPreferences}>Edycja</Button>
           <Button onClick={onClose}>Anuluj</Button>

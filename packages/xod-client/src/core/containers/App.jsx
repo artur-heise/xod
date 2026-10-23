@@ -381,7 +381,7 @@ export default class App extends React.Component {
         inputValidator={isValidUserDefinedPatchBasename}
         helpText={PATCH_BASENAME_RULES}
       >
-        Type the name for new patch:
+        Wpisz nazwę nowego patcha:
       </PopupPrompt>
     );
   }

@@ -132,10 +132,10 @@ class Catcher extends React.Component {
           <CloseButton onClick={this.onClose} />
           <h1>Wystąpił nieoczekiwany błąd</h1>
           <p>
-            First of all, save the project after recovering process is complete.
+            Po zakończeniu odzyskiwania najpierw zapisz projekt.
           </p>
           <p>
-            Then, please, report the bug to{' '}
+            Następnie zgłoś błąd na forum{' '}
             <a
               href={getUtmForumUrl('ide-crash-report')}
               target="_blank"

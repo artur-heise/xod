@@ -100,7 +100,7 @@ class PortSelect extends React.Component {
 
     return (
       <React.Fragment>
-        <label htmlFor="targetPort">Serial port:</label>
+        <label htmlFor="targetPort">Port szeregowy:</label>
         <div
           style={{
             display: 'flex',
@@ -115,7 +115,7 @@ class PortSelect extends React.Component {
             onClick={this.onRefreshPortsClicked}
             disabled={isSelecting}
           >
-            Refresh
+            Odśwież
           </button>
         </div>
       </React.Fragment>

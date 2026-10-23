@@ -11,7 +11,7 @@ export const subscribeAutoUpdaterEvents = (ipcRenderer, App) => {
     App.setState(R.assoc('downloadProgressPopup_error', error.message));
   });
   ipcRenderer.on(EVENTS.APP_UPDATE_AVAILABLE, (event, info) => {
-    console.log('Update available: ', info); // eslint-disable-line no-console
+    console.log('Dostępna aktualizacja: ', info); // eslint-disable-line no-console
     App.props.actions.addNotification(
       updateAvailableMessage(info.version),
       UPDATE_IDE_MESSAGE_ID

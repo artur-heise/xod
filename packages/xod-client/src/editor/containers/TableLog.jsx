@@ -176,7 +176,7 @@ class TableLog extends React.Component {
               disabled={this.isEmptySheet()}
             >
               <Icon name="copy" title="Pobierz dziennik" />
-              Copy
+              Kopiuj
             </button>
             <button
               className="save-log Button Button--light Button--inline"
@@ -184,7 +184,7 @@ class TableLog extends React.Component {
               disabled={this.isEmptySheet()}
             >
               <Icon name="save" title="Pobierz dziennik" />
-              Save
+              Zapisz
             </button>
           </div>
         </div>

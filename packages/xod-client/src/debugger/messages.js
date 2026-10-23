@@ -1,70 +1,70 @@
-export const TRANSPILING = 'Transpiling…';
-export const SUCCES = 'Done';
+export const TRANSPILING = 'Przetwarzanie kodu…';
+export const SUCCES = 'Gotowe';
 export const INTRODUCTION =
-  'Here you will see output from the compiler, uploader, debugger, and other tools.';
+  'Tutaj zobaczysz komunikaty kompilatora, narzędzia wgrywającego, debuggera i innych narzędzi.';
 
-export const CHECKING_DEPENDENCIES = 'Checking Arduino dependencies…';
+export const CHECKING_DEPENDENCIES = 'Sprawdzanie zależności Arduino…';
 export const CHECKING_DEPENDENCIES_SUCCESS =
-  'All Arduino dependencies already installed';
-export const INSTALLING_DEPENDENCIES = 'Installing Arduino dependencies…';
+  'Wszystkie zależności Arduino są już zainstalowane';
+export const INSTALLING_DEPENDENCIES = 'Instalowanie zależności Arduino…';
 export const INSTALLING_DEPENDENCIES_SUCCESS =
-  'All Arduino dependencies are installed successfully';
+  'Wszystkie zależności Arduino zostały pomyślnie zainstalowane';
 
-export const UPDATING_ARDUINO_DEPENDECIES = 'Updating Arduino packages…';
+export const UPDATING_ARDUINO_DEPENDECIES = 'Aktualizowanie pakietów Arduino…';
 export const UPDATING_ARDUINO_DEPENDECIES_SUCCESS =
-  'All Arduino packages are updated successfully';
+  'Wszystkie pakiety Arduino zostały pomyślnie zaktualizowane';
 
-export const WASM_NO_RUNTIME_FOUND = 'Unable to get URL of WASM runtime script';
-export const WASM_BINARY_NOT_FOUND = 'Unable to get URL of WASM binary file';
+export const WASM_NO_RUNTIME_FOUND = 'Nie można pobrać adresu URL skryptu środowiska uruchomieniowego WASM';
+export const WASM_BINARY_NOT_FOUND = 'Nie można pobrać adresu URL pliku binarnego WASM';
 
-export const WASM_BUILDING_ERROR = `The generated C++ code contains errors. It can be due to a bad node implementation
-or if your board is not compatible with XOD runtime code. The original compiler error
-message is above. Fix C++ errors to continue. If you believe it is a bug, report the
-problem to XOD developers.`;
+export const WASM_BUILDING_ERROR = `Wygenerowany kod C++ zawiera błędy. Przyczyną może być nieprawidłowa implementacja węzła
+lub niezgodność płytki z kodem środowiska uruchomieniowego XOD. Oryginalny komunikat
+kompilatora znajduje się powyżej. Popraw błędy C++, aby kontynuować. Jeśli uważasz, że to błąd,
+zgłoś go twórcom XOD.`;
 
 export const WASM_NETWORK_ERROR =
-  'Network error: can not compile in the cloud. Check your internet connection.';
+  'Błąd sieci: nie można kompilować w chmurze. Sprawdź połączenie z internetem.';
 export const WRONG_AUTHORIZATION_TOKEN =
-  'Wrong authorization token. Please, logout, log in and then try again.';
-export const COMPILATION_LIMIT_EXCEEDED = 'Cloud compilation limits exceeded.';
+  'Nieprawidłowy token autoryzacyjny. Wyloguj się, zaloguj ponownie i spróbuj jeszcze raz.';
+export const COMPILATION_LIMIT_EXCEEDED = 'Przekroczono limit kompilacji w chmurze.';
 export const COMPILATION_SERVICE_OFFLINE =
-  'Cloud compilation service is temporarily unavailable. Try again later.';
+  'Usługa kompilacji w chmurze jest tymczasowo niedostępna. Spróbuj ponownie później.';
 
-export const TABTEST_GENERATING_CODE = 'Generating C++ code…';
-export const TABTEST_BUILDING = 'Building…';
-export const TABTEST_RUNNING = 'Running tabular test…';
-export const TABTEST_ABORTED = 'The test was interrupted by the user';
+export const TABTEST_GENERATING_CODE = 'Generowanie kodu C++…';
+export const TABTEST_BUILDING = 'Budowanie…';
+export const TABTEST_RUNNING = 'Uruchamianie testu tabelarycznego…';
+export const TABTEST_ABORTED = 'Test został przerwany przez użytkownika';
 
-export const SIMULATION_GENERATING_CODE = 'Generating C++ code for simulation…';
-export const SIMULATION_BUILDING = 'Building…';
-export const SIMULATION_RUNNING = 'Running simulation…';
-export const SIMULATION_LAUNCHED = 'Simulation is launched';
-export const SIMULATION_ABORTED = 'The simulation was interrupted by the user';
+export const SIMULATION_GENERATING_CODE = 'Generowanie kodu C++ do symulacji…';
+export const SIMULATION_BUILDING = 'Budowanie…';
+export const SIMULATION_RUNNING = 'Uruchamianie symulacji…';
+export const SIMULATION_LAUNCHED = 'Uruchomiono symulację';
+export const SIMULATION_ABORTED = 'Symulacja została przerwana przez użytkownika';
 
 export const DO_NOT_USE_TETHERING_INTERNET_IN_BROWSER = {
   title: 'Połączenie sieciowe nie jest dostępne w przeglądarce',
   note:
-    'The internet tethering requires OS features which are not available to the web-browser.',
+    'Udostępnianie połączenia internetowego wymaga funkcji systemu operacyjnego niedostępnych w przeglądarce.',
   solution:
-    'Install the desktop version of the XOD IDE to reveal all features of XOD',
+    'Zainstaluj desktopową wersję XOD IDE, aby uzyskać dostęp do wszystkich funkcji.',
 };
 
 export const LOG_COPIED = {
-  title: `Copied`,
+  title: `Skopiowano`,
 };
 export const LOG_COPY_NOT_SUPPORTED = {
   title: 'Nieobsługiwana przeglądarka',
   solution:
-    'Install the desktop IDE or use the latest version of Google Chrome / Firefox.',
+    'Zainstaluj desktopową wersję IDE albo użyj najnowszej wersji Google Chrome lub Firefox.',
 };
 export const logCopyError = error => ({
-  title: `Cannot copy log`,
+  title: `Nie można skopiować dziennika`,
   note: error.message,
-  solution: 'Please, report the issue to the XOD developers ',
+  solution: 'Zgłoś problem twórcom XOD.',
 });
 
 export const logSaveError = error => ({
-  title: `Cannot save log`,
+  title: `Nie można zapisać dziennika`,
   note: error.message,
-  solution: 'Please, report the issue to the XOD developers ',
+  solution: 'Zgłoś problem twórcom XOD.',
 });

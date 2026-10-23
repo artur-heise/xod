@@ -4,20 +4,20 @@ import { PopupForm } from 'xod-client';
 
 import PortSelect from './PortSelect';
 
-class PopupConnectSerial extends React.Component {
+class PopupPołączSerial extends React.Component {
   constructor(props) {
     super(props);
 
     this.onClose = this.onClose.bind(this);
-    this.onConnectClicked = this.onConnectClicked.bind(this);
+    this.onPołączClicked = this.onPołączClicked.bind(this);
   }
 
   onClose() {
     this.props.onClose();
   }
 
-  onConnectClicked() {
-    this.props.onConnect(this.props.selectedPort);
+  onPołączClicked() {
+    this.props.onPołącz(this.props.selectedPort);
   }
 
   canUnpload() {
@@ -26,7 +26,7 @@ class PopupConnectSerial extends React.Component {
 
   render() {
     return (
-      <PopupForm isVisible title="Connect Serial" onClose={this.onClose}>
+      <PopupForm isVisible title="Połącz przez port szeregowy" onClose={this.onClose}>
         <div className="ModalContent">
           <PortSelect
             selectedPort={this.props.selectedPort}
@@ -36,14 +36,14 @@ class PopupConnectSerial extends React.Component {
         </div>
         <div className="ModalFooter">
           <button
-            onClick={this.onConnectClicked}
+            onClick={this.onPołączClicked}
             className="Button"
             disabled={!this.canUnpload()}
           >
-            Connect
+            Połącz
           </button>
           {this.props.isDeploymentInProgress ? (
-            <span className="busy-message">Deployment is in progress</span>
+            <span className="busy-message">Trwa wgrywanie programu</span>
           ) : null}
         </div>
       </PopupForm>
@@ -51,18 +51,18 @@ class PopupConnectSerial extends React.Component {
   }
 }
 
-PopupConnectSerial.propTypes = {
+PopupPołączSerial.propTypes = {
   isDeploymentInProgress: PropTypes.bool,
   selectedPort: PropTypes.object,
   listPorts: PropTypes.func,
   onPortChanged: PropTypes.func,
-  onConnect: PropTypes.func,
+  onPołącz: PropTypes.func,
   onClose: PropTypes.func,
 };
 
-PopupConnectSerial.defaultProps = {
+PopupPołączSerial.defaultProps = {
   isVisible: false,
   isDeploymentInProgress: false,
 };
 
-export default PopupConnectSerial;
+export default PopupPołączSerial;

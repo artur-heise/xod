@@ -23,7 +23,7 @@ const PatchGroupItemContextMenu = props => {
       // data-id has special attribute that used by func tests
       attributes={{ 'data-id': 'rename' }}
     >
-      Rename
+      Zmień nazwę
     </MenuItem>
   ) : null;
 
@@ -32,7 +32,7 @@ const PatchGroupItemContextMenu = props => {
       onClick={onContextMenuItemClick(props.onPatchDelete)}
       attributes={{ 'data-id': 'delete' }}
     >
-      Delete
+      Usuń
     </MenuItem>
   ) : null;
 
@@ -41,7 +41,7 @@ const PatchGroupItemContextMenu = props => {
       onClick={onContextMenuItemClick(props.onPatchClone)}
       attributes={{ 'data-id': 'clone' }}
     >
-      {trigger.isLocalPatch ? 'Clone' : 'Clone to My Project'}
+      {trigger.isLocalPatch ? 'Clone' : 'Sklonuj do mojego projektu'}
     </MenuItem>
   );
 
@@ -59,7 +59,7 @@ const PatchGroupItemContextMenu = props => {
         attributes={{ 'data-id': 'place' }}
       >
         <span className="accelerator">drag&drop</span>
-        Place
+        Umieść
       </MenuItem>
       <MenuItem divider />
       <MenuItem
@@ -67,7 +67,7 @@ const PatchGroupItemContextMenu = props => {
         attributes={{ 'data-id': 'open' }}
       >
         <span className="accelerator">click&times;2</span>
-        Open
+        Otwórz
       </MenuItem>
       {clonePatch}
       {renamePatch}
@@ -78,7 +78,7 @@ const PatchGroupItemContextMenu = props => {
         attributes={{ 'data-id': 'help' }}
       >
         <span className="accelerator">h</span>
-        Help
+        Pomoc
       </MenuItem>
     </ContextMenu>
   );

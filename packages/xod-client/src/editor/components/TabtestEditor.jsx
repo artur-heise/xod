@@ -94,7 +94,7 @@ const TabtestEditor = ({
           disabled={isRunning}
         >
           <Icon name={isRunning ? 'circle-o-notch' : 'play'} spin={isRunning} />
-          Run
+          Uruchom
         </button>
       </div>
       <div className="tabtest-editor">

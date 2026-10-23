@@ -7,37 +7,37 @@ export const SUCCESSFULLY_PUBLISHED = {
 export const LINK_ERRORS = {
   [LE.SAME_DIRECTION]: {
     title: 'Nieprawidłowe połączenie',
-    note: 'Links between pins of the same direction are not allowed.',
+    note: 'Nie można łączyć pinów o tym samym kierunku.',
     solution:
-      'Try creating a link between an input (pin on top) and output (pin at bottom)',
+      'Połącz wejście (pin u góry) z wyjściem (pin na dole).',
     persistent: false,
   },
   [LE.INCOMPATIBLE_TYPES]: {
     title: 'Niezgodne typy pinów',
-    note: `No implicit cast exist to convert the output type to the input type.`,
-    solution: 'Try to find a node for the conversion and place it as a medium.',
+    note: `Brak niejawnej konwersji typu wyjściowego na typ wejściowy.`,
+    solution: 'Znajdź węzeł konwertujący typ i umieść go pomiędzy pinami.',
     persistent: false,
   },
 };
 
 export const PROJECT_NAME_NEEDED_FOR_LITERAL = {
   title: 'Nie ustawiono nazwy projektu',
-  note: 'The program uses the `=XOD_PROJECT` literal.',
-  solution: 'Set the project name in Project Preferences and try again.',
+  note: 'Program używa literału `=XOD_PROJECT`.',
+  solution: 'Ustaw nazwę projektu w Ustawieniach projektu i spróbuj ponownie.',
 };
 
 export const PROJECT_NAME_NEEDED_TO_GENERATE_APIKEY = {
   title: 'Nie ustawiono nazwy projektu',
-  note: 'To issue a new API token the project name must not be empty.',
-  solution: 'Set the project name in Project Preferences and try again.',
+  note: 'Aby wygenerować nowy token API, nazwa projektu nie może być pusta.',
+  solution: 'Ustaw nazwę projektu w Ustawieniach projektu i spróbuj ponownie.',
 };
 
 export const CANT_GET_TOKEN_WITHOUT_APIKEY = {
   title: 'Nie ustawiono klucza API',
   note:
-    'The program uses the `=XOD_TOKEN` literal. The project should have XOD Cloud API Key set to make it work.',
+    'Program używa literału `=XOD_TOKEN`. Aby działał poprawnie, projekt musi mieć ustawiony klucz API XOD Cloud.',
   solution:
-    'Open Project Preferences to generate a new API key or enter existing one.',
+    'Otwórz Ustawienia projektu, aby wygenerować nowy klucz API lub wpisać istniejący.',
 };
 
 // For server responses:
@@ -46,12 +46,12 @@ export const CANT_GET_TOKEN_WITHOUT_APIKEY = {
 export const CANT_GET_TOKEN_BECAUSE_OF_WRONG_APIKEY = {
   title: 'Nieprawidłowy klucz API',
   note:
-    'The program uses the `=XOD_TOKEN` literal. The API key was revoked or has a wrong format.',
+    'Program używa literału `=XOD_TOKEN`. Klucz API został unieważniony lub ma nieprawidłowy format.',
   solution:
-    'Open Project Preferences to generate a new API key or enter existing one.',
+    'Otwórz Ustawienia projektu, aby wygenerować nowy klucz API lub wpisać istniejący.',
 };
 
 export const cantCloneNoPatchFound = patchPath => ({
   title: 'Nie można skopiować patcha',
-  note: `Patch with path "${patchPath}" not found in the project`,
+  note: `Nie znaleziono patcha o ścieżce „${patchPath}” w projekcie`,
 });

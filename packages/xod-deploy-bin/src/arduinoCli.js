@@ -502,7 +502,7 @@ export const saveSketch = async (cli, code) => {
 };
 
 const compilationBegun = boardName =>
-  `Begin compiling code for the board ${boardName}`;
+  `Rozpoczynanie kompilacji kodu dla płytki ${boardName}`;
 
 const UPLOAD_PROCESS_BEGINS = 'Uploading compiled code to the board...';
 

@@ -10,9 +10,9 @@ const EOT = String.fromCharCode(4); // end of transmittion
 const ACK = String.fromCharCode(6); // acknowledge
 
 const formatUnhandledTetheringErrorMessage = err => ({
-  title: 'Tethering Internet Error',
+  title: 'Błąd udostępniania połączenia internetowego',
   note: err.message,
-  solution: 'If you believe this is a bug, report it to XOD developers.',
+  solution: 'Jeśli uważasz, że to błąd, zgłoś go twórcom XOD.',
 });
 
 // Places the new chunks in the end of mutable `chunksToSend` list (SIDE-EFFECT)

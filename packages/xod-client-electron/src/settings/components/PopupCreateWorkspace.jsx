@@ -20,20 +20,20 @@ class PopupCreateWorkspace extends React.Component {
     return getForce(this.props.data) ? (
       <div>
         <p>
-          <strong>{getPath(this.props.data)} is not empty.</strong>
+          <strong>Katalog {getPath(this.props.data)} nie jest pusty.</strong>
           <br />
-          Create workspace anyway?
+          Czy mimo to utworzyć obszar roboczy?
         </p>
       </div>
     ) : (
       <div>
-        <p>Create new workspace in {getPath(this.props.data)}?</p>
+        <p>Utworzyć nowy obszar roboczy w katalogu {getPath(this.props.data)}?</p>
       </div>
     );
   }
 
   getButtonCaption() {
-    return getForce(this.props.data) ? 'Create, force' : 'Create';
+    return getForce(this.props.data) ? 'Utwórz mimo to' : 'Utwórz';
   }
 
   render() {
@@ -41,7 +41,7 @@ class PopupCreateWorkspace extends React.Component {
       <PopupForm
         isVisible={this.props.isVisible}
         isClosable={false}
-        title="New workspace"
+        title="Nowy obszar roboczy"
       >
         <div className="ModalContent">{this.getContent()}</div>
         <div className="ModalFooter">

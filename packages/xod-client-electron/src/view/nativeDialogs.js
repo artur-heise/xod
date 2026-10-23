@@ -30,7 +30,7 @@ export const getSaveDialogFileFilters = () =>
   ]);
 export const getOpenDialogFileFilters = () =>
   transformDialogFileFilters([
-    { name: 'Any XOD File', extensions: ['xodball', 'xod', 'xodp'] },
+    { name: 'Dowolny plik XOD', extensions: ['xodball', 'xod', 'xodp'] },
   ]);
 
 export const createSaveDialogOptions = (title, defaultPath, buttonLabel) => ({
@@ -39,8 +39,8 @@ export const createSaveDialogOptions = (title, defaultPath, buttonLabel) => ({
   buttonLabel,
   properties: ['createDirectory'],
   message: [
-    'To save as packed XOD project add ".xodball" extension,',
-    'To save as multifile XOD project add no extension',
+    'Aby zapisać spakowany projekt XOD, dodaj rozszerzenie ".xodball",',
+    'Aby zapisać projekt XOD w wielu plikach, nie dodawaj rozszerzenia',
   ].join('\n'),
   filters: getSaveDialogFileFilters(),
 });

@@ -529,9 +529,9 @@ class App extends client.App {
     dialog
       .showSaveDialog(
         createSaveDialogOptions(
-          'Save As...',
+          'Zapisz jako...',
           this.suggestProjectFilePath(),
-          'Save'
+          'Zapisz'
         )
       )
       .then(({ canceled, filePath }) => {
@@ -548,7 +548,7 @@ class App extends client.App {
         createSaveDialogOptions(
           'Save Copy As...',
           this.suggestProjectFilePath(),
-          'Save a Copy'
+          'Zapisz kopię'
         )
       )
       .then(({ canceled, filePath }) => {
@@ -570,10 +570,10 @@ class App extends client.App {
 
     dialog
       .showMessageBox({
-        message: 'Save changes to the current project before closing?',
-        detail: 'If you don’t save the project, changes will be lost',
+        message: 'Czy zapisać zmiany w bieżącym projekcie przed zamknięciem?',
+        detail: 'Jeśli nie zapiszesz projektu, zmiany zostaną utracone.',
         type: 'warning',
-        buttons: ['Save', 'Discard', 'Cancel'],
+        buttons: ['Zapisz', 'Odrzuć', 'Anuluj'],
         cancelId: 2,
       })
       .then(({ response }) => {
@@ -1030,8 +1030,8 @@ class App extends client.App {
         {/* TODO: Refactor this mess: */}
         {this.state.downloadProgressPopup ? (
           <client.PopupAlert
-            title="Downloading update for XOD IDE"
-            closeText="Close"
+            title="Pobieranie aktualizacji XOD IDE"
+            closeText="Zamknij"
             onClose={() => {
               this.setState(R.assoc('downloadProgressPopup', false));
               this.setState(R.assoc('downloadProgressPopupError', null));
@@ -1041,7 +1041,7 @@ class App extends client.App {
             {this.state.downloadProgressPopupError ? (
               <div>
                 <p>
-                  Error occured during downloading or installing the update.<br />
+                  Wystąpił błąd podczas pobierania lub instalowania aktualizacji.<br />
                   Please report the bug on our{' '}
                   <a href="https://forum.xod.io/" rel="noopener noreferrer">
                     forum
@@ -1051,7 +1051,7 @@ class App extends client.App {
               </div>
             ) : (
               <div>
-                <p>Downloading of the update for XOD IDE is in progress.</p>
+                <p>Trwa pobieranie aktualizacji XOD IDE.</p>
                 <p>
                   After download, we will automatically install it and restart
                   the application.<br />

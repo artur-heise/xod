@@ -22,7 +22,7 @@ import { getCurrentPatch } from '../../project/selectors';
 
 const getDocsForSelectedNode = foldMaybe(
   <div className="no-selection">
-    Select a node or patch to view its documentation article
+    Wybierz węzeł lub patch, aby wyświetlić jego dokumentację
   </div>,
   patch => <PatchDocs patch={patch} minimal />
 );

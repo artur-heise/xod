@@ -22,9 +22,9 @@ const DebuggerTopPane = props =>
             <TooltipHOC
               content={
                 <div>
-                  The program on screen is newer than the program running.<br />
-                  Watches and overall behavior can be incorrect. Stop debugging
-                  and upload/simulate again to synchronize.
+                  Program widoczny na ekranie jest nowszy niż uruchomiony program.<br />
+                  Podgląd wartości i ogólne działanie mogą być nieprawidłowe. Zatrzymaj debugowanie
+                  i ponownie wgraj program lub uruchom symulację, aby zsynchronizować stan.
                 </div>
               }
               render={(onMouseOver, onMouseMove, onMouseLeave) => (
@@ -34,7 +34,7 @@ const DebuggerTopPane = props =>
                   onMouseMove={onMouseMove}
                   onMouseLeave={onMouseLeave}
                 >
-                  Program changed
+                  Program został zmieniony
                   <Icon name="question-circle" />
                 </div>
               )}
@@ -44,7 +44,7 @@ const DebuggerTopPane = props =>
             className="breadcrumbs-button Button Button--light"
             onClick={props.stopDebuggerSession}
           >
-            <Icon name="stop" /> Stop
+            <Icon name="stop" /> Zatrzymaj
           </button>
         </Breadcrumbs>
       ) : null,

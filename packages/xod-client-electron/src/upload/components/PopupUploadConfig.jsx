@@ -183,7 +183,7 @@ class PopupUploadConfig extends React.Component {
 
     return (
       <div>
-        <label htmlFor="targetBoard">Board model:</label>
+        <label htmlFor="targetBoard">Model płytki:</label>
         {/* <div>{select}</div> */}
         <div
           style={{
@@ -198,7 +198,7 @@ class PopupUploadConfig extends React.Component {
             style={{ marginLeft: '1em' }}
             onClick={this.updateIndexes}
           >
-            Update
+            Aktualizuj
           </button>
         </div>
       </div>
@@ -253,7 +253,7 @@ class PopupUploadConfig extends React.Component {
     return (
       <PopupForm
         isVisible
-        title="Upload project to Arduino"
+        title="Wgraj projekt do Arduino"
         onClose={this.onClose}
       >
         <div className="ModalContent">
@@ -274,7 +274,7 @@ class PopupUploadConfig extends React.Component {
             checked={this.state.debugAfterUpload}
             onChange={this.onDebugCheckboxChanged}
           />
-          <label htmlFor="debug">Debug after upload</label>
+          <label htmlFor="debug">Uruchom debugowanie po wgraniu</label>
         </div>
         <div className="ModalFooter">
           <button
@@ -282,11 +282,11 @@ class PopupUploadConfig extends React.Component {
             className="Button"
             disabled={!this.canUnpload()}
           >
-            Upload
+            Wgraj
           </button>
           {this.props.isDeploymentInProgress ? (
             <span className="busy-message">
-              Another deployment job is in progress
+              Trwa już inne zadanie wgrywania
             </span>
           ) : null}
         </div>

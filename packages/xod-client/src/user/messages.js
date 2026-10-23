@@ -2,28 +2,28 @@ export const INCORRECT_CREDENTIALS = {
   title: 'Nieprawidłowa nazwa użytkownika lub hasło',
   // TODO: button with dircet URL for password recovery
   solution:
-    'Make sure you use the same credentials as on https://xod.io site. ' +
-    'If you forgot the password, open the site to recover',
+    'Upewnij się, że używasz tych samych danych logowania co w witrynie https://xod.io. ' +
+    'Jeśli nie pamiętasz hasła, otwórz witrynę, aby je odzyskać',
 };
 
 export const SERVICE_UNAVAILABLE = {
   title: 'Usługa jest niedostępna',
-  note: 'Failed to complete a request to the XOD server.',
+  note: 'Nie udało się wykonać żądania do serwera XOD.',
   // TODO: button “Open XOD site”
   solution:
-    'Make sure your internet connection is up and ' +
-    'https://xod.io site is allowed by your proxy or firewall.',
+    'Sprawdź, czy masz połączenie z internetem i czy witryna ' +
+    'https://xod.io jest dozwolona przez serwer proxy lub zaporę sieciową.',
 };
 
 export const LOG_IN_TO_CONTINUE = {
   title: 'Zaloguj się, aby kontynuować',
   // TODO: parametrize action
-  note: 'The action requires that you are signed in into your XOD account.',
+  note: 'Aby wykonać tę czynność, musisz zalogować się na konto XOD.',
 };
 
 export const USERNAME_NEEDED_FOR_LITERAL = {
   title: 'Nie zalogowano',
   note:
-    'The program uses the `=XOD_USERNAME` literal. You should log in to make it work.',
-  solution: 'Open the Account sidebar to enter your login/password or sign up.',
+    'Program używa literału `=XOD_USERNAME`. Zaloguj się, aby działał poprawnie.',
+  solution: 'Otwórz panel konta, aby podać login i hasło lub utworzyć konto.',
 };

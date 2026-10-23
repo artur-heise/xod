@@ -21,14 +21,14 @@ const ERROR_FORMATTERS = {
       `Tried to use ${err.port.path}, ` +
         `but available ports are: ${R.map(R.prop('path'), err.ports)}`
     ),
-  [EC.UPLOAD_ERROR]: err => composeMessage('Upload failed', R.toString(err)),
+  [EC.UPLOAD_ERROR]: err => composeMessage('Wgrywanie nie powiodło się', R.toString(err)),
   [EC.INDEX_LIST_ERROR]: err =>
     composeMessage(
       'Package index not available',
       `A request to ${err.request.path} failed: ${err.error.message}`
     ),
   [EC.CANT_INSTALL_ARCHITECTURE]: err =>
-    composeMessage('Tools failed to install', R.toString(err)),
+    composeMessage('Nie udało się zainstalować narzędzi', R.toString(err)),
 
   [XFS_EC.INVALID_WORKSPACE_PATH]: err =>
     composeMessage(
@@ -47,49 +47,49 @@ const ERROR_FORMATTERS = {
     ),
 
   [XFS_EC.CANT_CREATE_WORKSPACE_FILE]: err =>
-    composeMessage(`Could not create workspace at ${err.path}`, err.message),
+    composeMessage(`Nie udało się utworzyć obszaru roboczego w ${err.path}`, err.message),
   [XFS_EC.CANT_COPY_STDLIB]: err =>
-    composeMessage(`Could not copy stdlib at ${err.path}`, err.message),
+    composeMessage(`Nie udało się skopiować biblioteki standardowej do ${err.path}`, err.message),
   [XFS_EC.CANT_COPY_DEFAULT_PROJECT]: err =>
     composeMessage(
-      `Could not copy default project at ${err.path}`,
+      `Nie udało się skopiować domyślnego projektu do ${err.path}`,
       err.message
     ),
   [XFS_EC.CANT_ENUMERATE_PROJECTS]: err =>
-    composeMessage(`Could not enumerate projects at ${err.path}`, err.message),
+    composeMessage(`Nie udało się wyświetlić projektów w ${err.path}`, err.message),
   [XFS_EC.CANT_SAVE_PROJECT]: err =>
-    composeMessage(`Could not save the project at ${err.path}`, err.message),
+    composeMessage(`Nie udało się zapisać projektu w ${err.path}`, err.message),
   [XFS_EC.CANT_SAVE_LIBRARY]: err =>
-    composeMessage(`Could not save the library at ${err.path}`, err.message),
+    composeMessage(`Nie udało się zapisać biblioteki w ${err.path}`, err.message),
 
   [EC.CANT_CREATE_NEW_PROJECT]: err =>
-    composeMessage('Could not create a new project', err.message),
+    composeMessage('Nie udało się utworzyć nowego projektu', err.message),
   [EC.CANT_OPEN_SELECTED_PROJECT]: err =>
-    composeMessage('Could not open selected project', err.message),
+    composeMessage('Nie udało się otworzyć wybranego projektu', err.message),
 
   [EC.BOARD_NOT_SUPPORTED]: err => `Board ${err.boardId} is not supported yet`,
   [EC.CANT_GET_UPLOAD_CONFIG]: err =>
-    `Could not get upload config for board ${err.boardId}. Returned status ${
+    `Nie udało się pobrać konfiguracji wgrywania dla płytki ${err.boardId}. Returned status ${
       err.status
     } ${err.statusText}`,
   [EC.CLOUD_NETWORK_ERROR]: err =>
     composeMessage(
-      'Could not connect to cloud service.',
-      `Probably you donʼt have an internet connection. Error: ${err.message}`
+      'Nie udało się połączyć z usługą chmurową.',
+      `Prawdopodobnie brak połączenia z internetem. Błąd: ${err.message}`
     ),
 
   [XD_EC.COMPILE_FAILED]: err =>
-    composeMessage('Compilation failed with error', err.message),
+    composeMessage('Kompilacja zakończyła się błędem', err.message),
   [XD_EC.COMPILE_TIMEDOUT]: err =>
     composeMessage(`Compilation timed out (${err.message}ms expired)`),
   [XD_EC.CLOSED]: err =>
     composeMessage(
-      `Connection was closed with reason (${err.closeCode})`,
+      `Połączenie zostało zamknięte. Przyczyna (${err.closeCode})`,
       err.reason
     ),
   [XD_EC.FAILED]: err =>
     composeMessage(
-      `Canʼt establish connection with compile server: (${err.code})`,
+      `Nie można nawiązać połączenia z serwerem kompilacji: (${err.code})`,
       err.message
     ),
 };

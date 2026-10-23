@@ -28,32 +28,32 @@ class PopupSetWorkspace extends React.Component {
       return {
         currentWorkspace: (
           <p>
-            To save your project you should choose a workspace directory.<br />
-            We&apos;ll put all your projects into this directory, but you can
-            easily switch it in the future.
+            Aby zapisać projekt, wybierz katalog obszaru roboczego.<br />
+            W tym katalogu będą przechowywane wszystkie projekty, ale możesz
+            łatwo zmienić go w przyszłości.
           </p>
         ),
-        buttonLabel: 'Select workspace directory',
+        buttonLabel: 'Wybierz katalog obszaru roboczego',
       };
     }
 
     return {
       currentWorkspace: (
         <p>
-          Current workspace directory:<br />
+          Bieżący katalog obszaru roboczego:<br />
           <code>{this.props.workspace}</code>
         </p>
       ),
-      buttonLabel: 'Switch workspace directory',
+      buttonLabel: 'Zmień katalog obszaru roboczego',
     };
   }
 
   changeWorkspace() {
     remote.dialog
       .showOpenDialog({
-        title: 'Choose workspace directory',
+        title: 'Wybierz katalog obszaru roboczego',
         properties: ['openDirectory'],
-        buttonLabel: 'Choose directory',
+        buttonLabel: 'Wybierz katalog',
       })
       .then(this.onChange);
   }
@@ -62,7 +62,7 @@ class PopupSetWorkspace extends React.Component {
     const { currentWorkspace, buttonLabel } = this.getWorkspaceView();
     return (
       <PopupForm
-        title="Choose your workspace directory"
+        title="Wybierz katalog obszaru roboczego"
         isVisible={this.props.isVisible}
         isClosable={this.props.isClosable}
         onClose={this.onClose}
